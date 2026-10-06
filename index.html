@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>워시Q Care 울맘 - 창업, 생활빨래에서 답을 찾다</title>
+<meta name="description" content="울맘은 생업형 유인 빨래방 워시Q케어의 서비스명입니다. 고객의 빨래를 대신하고, 동네의 일감을 연결하는 생활빨래 매장.">
+<script>document.documentElement.className='js';</script>
+<style>
+@font-face{font-family:'KoPubWorld Dotum';font-weight:300;font-style:normal;font-display:swap;src:url('fonts/KoPubLight.woff2') format('woff2');}
+@font-face{font-family:'KoPubWorld Dotum';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/KoPubMedium.woff2') format('woff2');}
+@font-face{font-family:'KoPubWorld Dotum';font-weight:700;font-style:normal;font-display:swap;src:url('fonts/KoPubBold.woff2') format('woff2');}
+
+:root{
+  --cream:#F6F1EB; --white:#FFFFFF; --sky:#E9F4FA; --navy:#132F44; --blue:#097BC2; --blue-d:#06629D;
+  --video:#234862; --orange:#FD6B2F; --grey:#E8E8EA; --text:#132F44; --body:#4F5E6B; --mute:#7C8894; --line:#E2E6EA;
+  /* type scale */
+  --fs-h1:clamp(34px,3.4vw + 20px,66px);
+  --fs-h2:clamp(26px,1.9vw + 17px,46px);
+  --fs-lead:clamp(15.5px,.5vw + 12.5px,20px);
+  --fs-h3:clamp(18px,.6vw + 14.5px,23px);
+  --fs-h4:clamp(16px,.4vw + 12.8px,19px);
+  --fs-body:clamp(14.5px,.35vw + 11.5px,16.5px);
+  --fs-sm:clamp(13px,.25vw + 10.8px,14.5px);
+  --fs-num:clamp(26px,2.2vw + 10px,42px);
+  /* spacing */
+  --gutter:clamp(18px,5vw,72px);
+  --gap:clamp(12px,1.6vw,22px);
+  --r:clamp(12px,1.4vw,18px);
+  --pad:clamp(56px,7vw,104px);
+  --mt:clamp(26px,3.2vw,46px);
+  --mt-s:clamp(14px,1.6vw,22px);
+  --cp:clamp(18px,2.1vw,30px);
+  --shadow:0 12px 32px rgba(19,47,68,.10);
+  --shadow-lg:0 22px 50px rgba(19,47,68,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:'KoPubWorld Dotum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:500;font-size:var(--fs-body);color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden;word-break:keep-all;overflow-wrap:anywhere;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+.wrap{width:min(1240px,calc(100% - 2*var(--gutter)));margin-inline:auto;}
+section[id]{scroll-margin-top:116px;}
+.sec{padding-block:var(--pad);position:relative;}
+.bg-cream{background:var(--cream);} .bg-sky{background:var(--sky);} .bg-navy{background:var(--navy);color:#fff;}
+h2,h3,.ctitle,.big{text-wrap:balance;}
+p,.cbody,.cd,.txt{text-wrap:pretty;}
+
+/* --- section head : eyebrow / title / lead --- */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:clamp(17px,.7vw + 13px,24px);font-weight:700;letter-spacing:-.01em;color:var(--blue);margin-bottom:clamp(14px,1.6vw,22px);}
+.eyebrow b{font-weight:500;opacity:.55;font-size:.78em;letter-spacing:.06em;}
+.eyebrow b::after{content:'';display:inline-block;width:1px;height:.9em;margin:0 .1em 0 .6em;background:currentColor;opacity:.5;vertical-align:-.05em;}
+.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:currentColor;animation:dotp 2.4s ease-out infinite;}
+@keyframes dotp{0%{box-shadow:0 0 0 0 rgba(9,123,194,.5);}70%,100%{box-shadow:0 0 0 8px rgba(9,123,194,0);}}
+.bg-navy .eyebrow{color:#8FD0F5;}
+.h2{font-size:var(--fs-h2);font-weight:700;line-height:1.36;letter-spacing:-.025em;color:var(--navy);}
+.h2 em{font-style:normal;color:var(--blue);}
+.bg-navy .h2{color:#fff;}
+.lead{margin-top:clamp(14px,1.5vw,20px);max-width:40em;font-size:var(--fs-lead);font-weight:300;line-height:1.7;color:var(--body);}
+.lead.dark{color:var(--navy);font-weight:500;}
+.light{font-weight:300;}
+.blue{color:var(--blue);}
+.mt{margin-top:var(--mt);} .mt-s{margin-top:var(--mt-s);}
+
+.grid{display:grid;gap:var(--gap);}
+.g2{grid-template-columns:repeat(2,1fr);} .g3{grid-template-columns:repeat(3,1fr);} .g4{grid-template-columns:repeat(4,1fr);}
+.card{border-radius:var(--r);padding:var(--cp);transition:transform .35s ease,box-shadow .35s ease,background .35s ease,color .35s ease;}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.t-sky{background:var(--sky);} .t-cream{background:var(--cream);} .t-white{background:#fff;}
+/* card typography: title(bold) + body(light) */
+.ctitle{font-size:var(--fs-h3);font-weight:700;color:var(--blue);line-height:1.4;letter-spacing:-.01em;}
+.cbody{margin-top:10px;font-size:var(--fs-body);font-weight:300;line-height:1.75;color:var(--text);}
+.bar{margin-top:var(--mt);border-radius:var(--r);padding:clamp(18px,2.2vw,30px) clamp(16px,2vw,28px);text-align:center;font-size:var(--fs-h3);font-weight:700;line-height:1.5;letter-spacing:-.01em;}
+.bar.navy{background:var(--navy);color:#fff;}
+.bar.sky{background:var(--sky);color:var(--blue);font-size:var(--fs-h4);}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+.reveal.in{opacity:1;transform:none;}
+.stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease,background .35s ease,box-shadow .35s ease,color .35s ease;}
+.stagger.in>*{opacity:1;transform:none;}
+.stagger.in>*:nth-child(1){transition-delay:.02s;}.stagger.in>*:nth-child(2){transition-delay:.1s;}.stagger.in>*:nth-child(3){transition-delay:.18s;}
+.stagger.in>*:nth-child(4){transition-delay:.26s;}.stagger.in>*:nth-child(5){transition-delay:.34s;}.stagger.in>*:nth-child(6){transition-delay:.42s;}
+.stagger.in>*:nth-child(7){transition-delay:.5s;}.stagger.in>*:nth-child(8){transition-delay:.58s;}.stagger.in>*:nth-child(9){transition-delay:.66s;}
+html:not(.js) .reveal,html:not(.js) .stagger>*{opacity:1;transform:none;}
+.stagger.in>*:hover{transform:translateY(-5px);transition-delay:0s;}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),#5CC4F5);z-index:9999;}
+
+/* --- header + all-section menu --- */
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(246,241,235,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .3s;}
+.site-header.scrolled{box-shadow:0 4px 18px rgba(19,47,68,.10);}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px;transition:padding .3s;}
+.site-header.scrolled .hd{padding-block:8px;}
+.logo img{height:46px;width:auto;transition:height .3s;}
+.site-header.scrolled .logo img{height:32px;}
+.hd-r{display:flex;align-items:center;gap:12px;}
+.cta{padding:10px 20px;border-radius:99px;background:var(--blue);color:#fff;font-size:var(--fs-sm);font-weight:700;transition:background .25s,transform .25s;}
+.cta:hover{background:var(--blue-d);transform:translateY(-2px);}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;position:relative;}
+.burger span{position:absolute;left:12px;right:12px;height:2px;border-radius:2px;background:var(--navy);transition:transform .3s,opacity .2s,top .3s;}
+.burger span:nth-child(1){top:15px;} .burger span:nth-child(2){top:21px;} .burger span:nth-child(3){top:27px;}
+.burger[aria-expanded="true"] span:nth-child(1){top:21px;transform:rotate(45deg);}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.burger[aria-expanded="true"] span:nth-child(3){top:21px;transform:rotate(-45deg);}
+.menu{border-top:1px solid var(--line);}
+.menu-in{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding-block:8px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);}
+.menu-in::-webkit-scrollbar{display:none;}
+.menu a{flex:none;display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:99px;font-size:var(--fs-sm);font-weight:500;color:var(--body);white-space:nowrap;transition:background .25s,color .25s;}
+.menu a .n{display:none;font-style:normal;font-weight:500;color:var(--blue);}
+.menu a:hover{background:var(--sky);color:var(--navy);}
+.menu a.active{background:var(--blue);color:#fff;}
+.menu a.active .n{color:#BFE3F8;}
+.menu a.go{color:var(--blue);font-weight:700;}
+.menu a.go.active{color:#fff;}
+
+/* --- 01 hero --- */
+.hero{background:var(--cream);position:relative;overflow:hidden;}
+.hero>.wrap,.hero-media{position:relative;z-index:1;}
+.noteline{padding-top:clamp(16px,1.8vw,26px);font-size:var(--fs-body);font-weight:300;color:var(--body);}
+.noteline b{font-weight:700;color:var(--blue);margin-right:.3em;}
+.hero h1{margin-top:clamp(26px,3.4vw,50px);font-size:var(--fs-h1);font-weight:700;line-height:1.26;letter-spacing:-.035em;color:var(--blue);}
+.hero h1 .c{display:block;color:var(--navy);}
+.hero .sub{margin-top:clamp(16px,1.8vw,26px);font-size:clamp(17px,.9vw + 11px,26px);font-weight:700;color:var(--blue);line-height:1.5;letter-spacing:-.02em;}
+.hero .p{margin-top:clamp(10px,1.2vw,16px);max-width:34em;font-size:var(--fs-lead);font-weight:300;line-height:1.7;color:var(--body);}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,2.6vw,38px);margin-bottom:clamp(28px,3.4vw,52px);}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-width:clamp(150px,15vw,210px);padding:clamp(13px,1.2vw,16px) 24px;border-radius:10px;font-size:var(--fs-body);font-weight:700;border:1px solid var(--blue);transition:transform .25s,box-shadow .25s,background .25s,color .25s;}
+.btn.fill{background:var(--blue);color:#fff;} .btn.line{background:#fff;color:var(--blue);border-color:var(--line);}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+.btn.fill:hover{background:var(--blue-d);} .btn.line:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.hero-media{position:relative;}
+.hero-clip{overflow:hidden;}
+.hero-photo{width:100%;aspect-ratio:3000/1437;object-fit:cover;transform-origin:50% 40%;animation:kb 20s ease-in-out infinite alternate;translate:0 var(--py,0px);will-change:transform,translate;}
+@keyframes kb{from{transform:scale(1.08);}to{transform:scale(1.15);}}
+.statwrap{position:relative;z-index:2;margin-top:-5.27%;padding-inline:5.83%;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--blue);color:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);}
+.stats div{padding:clamp(16px,2vw,30px) clamp(16px,2.2vw,32px);transition:background .3s;}
+.stats div:hover{background:var(--blue-d);}
+.stats strong{display:block;font-size:var(--fs-num);font-weight:700;line-height:1.2;letter-spacing:-.02em;}
+.stats span{display:block;margin-top:.3em;font-size:var(--fs-body);font-weight:300;}
+.hero-end{height:clamp(30px,4vw,60px);}
+
+/* --- 02 --- */
+.vs .card{min-height:clamp(200px,22vw,300px);}
+.vs .a{background:var(--grey);} .vs .b{background:var(--blue);color:#fff;}
+.vs .lab{font-size:var(--fs-body);font-weight:700;opacity:.9;}
+.vs .big{margin-top:clamp(10px,1.2vw,16px);font-size:clamp(26px,1.8vw + 14px,42px);font-weight:700;line-height:1.25;letter-spacing:-.025em;}
+.vs .txt{margin-top:clamp(12px,1.4vw,20px);font-size:var(--fs-body);font-weight:300;line-height:1.85;}
+.flow-hl span{transition:color .3s,font-weight .3s;}
+.flow-hl span.on{font-weight:700;color:#fff;}
+.vs .a .flow-hl span.on{color:var(--blue);}
+
+/* --- 03 --- */
+.svc{padding:0;overflow:hidden;background:#fff;border-radius:var(--r);}
+.svc .ph{overflow:hidden;aspect-ratio:1286/736;background:var(--sky);}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);translate:0 var(--py,0px);transition:transform .7s ease;}
+.svc:hover .ph img{transform:scale(1.22);}
+.svc .tx{padding:clamp(16px,1.8vw,26px) var(--cp) clamp(20px,2.4vw,34px);}
+.svc .no{display:flex;align-items:baseline;gap:.55em;font-size:var(--fs-h3);font-weight:700;color:var(--navy);letter-spacing:-.01em;}
+.svc .no b{font-weight:500;color:var(--blue);font-size:.9em;}
+.svc .ct{margin-top:8px;font-size:var(--fs-h4);font-weight:700;color:var(--blue);}
+.svc .cd{margin-top:8px;font-size:var(--fs-body);font-weight:300;line-height:1.75;color:var(--body);}
+.foot-line{margin-top:var(--mt);text-align:center;font-size:var(--fs-body);font-weight:500;color:var(--navy);}
+
+/* --- 04 --- */
+.who{text-align:center;padding:clamp(22px,2.6vw,38px) var(--cp);}
+.who svg{width:clamp(48px,5vw,68px);height:clamp(48px,5vw,68px);margin:0 auto;stroke:var(--blue);fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s;}
+.who:hover svg{transform:translateY(-4px) scale(1.08);}
+.who h3{margin-top:12px;font-size:clamp(20px,1vw + 13px,28px);font-weight:700;letter-spacing:-.02em;}
+.who .ct{margin-top:clamp(14px,1.6vw,22px);text-align:left;font-size:var(--fs-h4);font-weight:700;color:var(--blue);line-height:1.5;}
+.who .cd{margin-top:8px;text-align:left;font-size:var(--fs-body);font-weight:300;line-height:1.75;}
+
+/* --- 05 --- */
+.work{padding:0;background:#fff;border-radius:var(--r);overflow:hidden;}
+.work .ph{position:relative;overflow:hidden;aspect-ratio:850/672;}
+.work .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);translate:0 var(--py,0px);filter:grayscale(.92) contrast(.96);transition:transform .7s,filter .7s;}
+.work:hover .ph img{transform:scale(1.22);filter:none;}
+@media (hover:none){.work .ph img{filter:none;}}
+.work .tag{position:absolute;left:0;top:0;width:var(--w,31%);height:14.6%;display:flex;align-items:center;padding-left:4.2%;background:var(--orange);color:#fff;font-size:var(--fs-body);font-weight:700;border-bottom-right-radius:1.4%;}
+.work .tx{padding:clamp(14px,1.6vw,22px) var(--cp) clamp(16px,2vw,28px);}
+.work h3{font-size:var(--fs-h3);font-weight:700;}
+.work p{margin-top:6px;font-size:var(--fs-body);font-weight:300;line-height:1.75;color:var(--body);}
+.greybar{margin-top:var(--mt-s);background:#E4E4E4;border-radius:var(--r);padding:clamp(16px,2vw,28px) 16px;text-align:center;}
+.greybar b{display:block;font-size:var(--fs-h4);font-weight:700;}
+.greybar span{display:block;margin-top:.45em;font-size:var(--fs-sm);font-weight:300;color:var(--body);}
+.center-head{margin-top:clamp(36px,5vw,72px);text-align:center;}
+.center-head h3{font-size:clamp(22px,1.4vw + 14px,36px);font-weight:700;color:var(--blue);letter-spacing:-.02em;}
+.center-head p{margin-top:.5em;font-size:var(--fs-lead);font-weight:300;color:var(--text);}
+.fine{margin-top:var(--mt);font-size:var(--fs-sm);font-weight:300;line-height:1.8;color:var(--body);}
+
+/* --- 06 --- */
+.sub-title{margin-top:var(--mt);font-size:var(--fs-h3);font-weight:700;letter-spacing:-.01em;}
+.type{cursor:pointer;position:relative;border:2px solid transparent;}
+.type .tn{font-size:var(--fs-sm);font-weight:700;letter-spacing:.04em;color:var(--blue);}
+.type .tp{margin-top:6px;font-size:clamp(24px,1.5vw + 14px,36px);font-weight:700;letter-spacing:-.02em;}
+.type .td{margin-top:6px;font-size:var(--fs-body);font-weight:300;color:var(--body);}
+.type.sel{border-color:var(--blue);box-shadow:var(--shadow-lg);}
+.type .chk{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;transform:scale(0);transition:transform .3s;}
+.type.sel .chk{transform:scale(1);}
+.pay{margin-top:var(--mt-s);background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.pay small{display:block;font-size:var(--fs-body);font-weight:300;color:#C4D3DF;}
+.pay .big{margin-top:10px;font-size:clamp(32px,3vw + 12px,60px);font-weight:700;line-height:1.15;letter-spacing:-.03em;white-space:nowrap;}
+.pay .r{text-align:right;} .pay .r .big{font-size:clamp(26px,2.4vw + 10px,48px);}
+.pay .bot{margin-top:clamp(10px,1.4vw,20px);font-size:var(--fs-body);font-weight:300;color:#C4D3DF;}
+.prog{margin-top:14px;height:6px;border-radius:99px;background:rgba(255,255,255,.2);overflow:hidden;}
+.prog i{display:block;height:100%;width:0;background:#5CC4F5;border-radius:99px;transition:width 1.8s cubic-bezier(.2,.8,.2,1);}
+
+/* --- 07 --- */
+.eq{text-align:left;cursor:pointer;background:#fff;padding:clamp(14px,1.8vw,24px);}
+.eq .im{aspect-ratio:1/1.02;display:flex;align-items:center;justify-content:center;}
+.eq .im img{max-height:100%;width:auto;max-width:92%;object-fit:contain;transition:transform .5s;}
+.eq:hover .im img{transform:scale(1.06) rotate(1.5deg);}
+.eq-toggle{display:inline-flex;align-items:center;gap:10px;padding:clamp(12px,1.1vw,15px) clamp(22px,2vw,30px);border-radius:99px;background:#fff;color:var(--blue);border:1.5px solid var(--blue);font-size:var(--fs-body);font-weight:700;transition:background .3s,color .3s,transform .25s,box-shadow .3s;}
+.eq-toggle:hover{background:var(--blue);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow);}
+.eq-toggle svg{width:18px;height:18px;transition:transform .4s;}
+.eq-toggle[aria-expanded="true"]{background:var(--blue);color:#fff;} .eq-toggle[aria-expanded="true"] svg{transform:rotate(180deg);}
+.imw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s cubic-bezier(.2,.8,.2,1);}
+.imw>.im{min-height:0;overflow:hidden;opacity:0;transition:opacity .5s;}
+.eqgrid.show-img .imw{grid-template-rows:1fr;}
+.eqgrid.show-img .imw>.im{opacity:1;transition-delay:.15s;}
+.eq h3{transition:margin-top .7s cubic-bezier(.2,.8,.2,1);}
+.eqgrid:not(.show-img) .eq h3{margin-top:0;}
+.eq h3{margin-top:10px;font-size:var(--fs-h4);font-weight:700;letter-spacing:-.01em;}
+.eq p{margin-top:4px;font-size:var(--fs-body);font-weight:300;color:var(--blue);}
+.tbl-title{margin-top:clamp(40px,5.4vw,80px);font-size:var(--fs-h3);font-weight:700;}
+.tbl-wrap{margin-top:var(--mt-s);overflow-x:auto;border-radius:10px;}
+table{width:100%;border-collapse:collapse;min-width:540px;}
+th{background:var(--navy);color:#fff;text-align:left;padding:14px clamp(14px,1.8vw,26px);font-size:var(--fs-body);font-weight:700;}
+td{padding:clamp(14px,1.5vw,20px) clamp(14px,1.8vw,26px);font-size:var(--fs-body);font-weight:300;background:#fff;transition:background .25s;}
+tr:nth-child(odd) td{background:var(--cream);}
+tbody tr:hover td{background:#DCEEF8;}
+td.ty{color:var(--blue);font-weight:700;}
+.common{margin-top:var(--mt-s);font-size:var(--fs-body);font-weight:300;line-height:1.85;color:var(--body);}
+.common b{color:var(--text);font-weight:700;}
+.lightbox{position:fixed;inset:0;background:rgba(19,47,68,.75);z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox.open{opacity:1;pointer-events:auto;}
+.lb-card{background:#fff;border-radius:20px;width:min(440px,100%);padding:32px;text-align:center;transform:scale(.93);transition:transform .3s;}
+.lightbox.open .lb-card{transform:none;}
+.lb-card img{max-height:46vh;width:auto;margin:0 auto 18px;}
+.lb-card h4{font-size:22px;font-weight:700;} .lb-card p{margin-top:6px;color:var(--blue);font-weight:500;}
+.lb-card button{margin-top:22px;padding:10px 24px;border-radius:99px;background:var(--navy);color:#fff;font-weight:500;}
+
+/* --- 08 / 09 / 10 / 11 --- */
+.biz.wide{min-height:clamp(110px,12vw,170px);}
+.sup{padding:var(--cp);}
+.sup h3{font-size:var(--fs-h3);font-weight:700;color:var(--blue);letter-spacing:-.01em;}
+.sup h3 span{margin-left:.55em;font-size:var(--fs-h4);font-weight:500;color:var(--navy);}
+.sup ul{margin-top:clamp(10px,1.2vw,16px);list-style:none;}
+.sup li{padding:6px 0;font-size:var(--fs-body);font-weight:300;line-height:1.7;transition:padding-left .25s,color .25s,opacity .6s ease,transform .6s ease;}
+.sup li:hover{padding-left:12px;color:var(--blue);font-weight:500;}
+.sup.hq{background:var(--sky);min-height:clamp(240px,26vw,380px);} .sup.ow{background:transparent;}
+.sup.ow:hover{background:rgba(255,255,255,.6);}
+.mk{display:flex;align-items:center;gap:clamp(14px,2vw,28px);padding:clamp(16px,1.9vw,26px) var(--cp);}
+.mk .n{font-size:var(--fs-h4);font-weight:500;color:var(--blue);transition:color .3s;min-width:1.6em;}
+.mk .t{font-size:var(--fs-h4);font-weight:700;letter-spacing:-.01em;transition:color .3s;}
+.mk:hover .n,.mk:hover .t{color:#fff;}
+.step{background:var(--sky);cursor:pointer;border:2px solid transparent;}
+.step .n{font-size:clamp(20px,.9vw + 14px,30px);font-weight:500;color:var(--blue);line-height:1;transition:color .3s;}
+.step h3{margin-top:clamp(12px,1.4vw,20px);font-size:var(--fs-h3);font-weight:700;letter-spacing:-.01em;transition:color .3s;}
+.step p{margin-top:8px;font-size:var(--fs-body);font-weight:300;line-height:1.75;color:var(--body);transition:color .3s;}
+.step:hover .n,.step:hover h3,.step:hover p{color:#fff;}
+.step.active{border-color:var(--blue);box-shadow:var(--shadow);}
+
+/* --- 12 --- */
+.company{margin-top:clamp(18px,2vw,28px);font-size:var(--fs-h3);font-weight:700;}
+.company i{font-style:normal;margin:0 .6em;font-weight:300;color:var(--mute);}
+.stat{text-align:center;padding:clamp(18px,2.4vw,34px) 10px;}
+.stat strong{display:block;font-size:var(--fs-num);font-weight:700;color:var(--blue);line-height:1.2;letter-spacing:-.02em;}
+.stat span{display:block;margin-top:8px;font-size:var(--fs-body);font-weight:300;}
+.sub-h{margin-top:clamp(40px,5vw,72px);font-size:clamp(20px,1.1vw + 14px,30px);font-weight:700;letter-spacing:-.02em;}
+.sub-h+.lead{margin-top:8px;}
+.as-wrap{margin-top:var(--mt-s);display:flex;justify-content:center;}
+.as-ring{position:relative;width:min(100%,660px);aspect-ratio:1;}
+.as-ring svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+.as-ring .arc .ln{fill:none;stroke:#A9D3EE;stroke-width:.55;stroke-linecap:round;transition:stroke .4s;}
+.as-ring .arc .hd{fill:#A9D3EE;transition:fill .4s;}
+.as-ring .arc.ret .ln{stroke-dasharray:1.4 1.3;}
+.as-ring .arc.on .ln{stroke:var(--blue);} .as-ring .arc.on .hd{fill:var(--blue);}
+.as-ring .pulse{transform-origin:50px 50px;animation:spin 40s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.asn{position:absolute;width:27%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--sky);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6%;transition:background .4s,color .4s,transform .4s,box-shadow .4s;}
+.asn i{font-style:normal;font-size:var(--fs-sm);font-weight:700;letter-spacing:.08em;color:var(--blue);transition:color .4s;}
+.asn b{margin-top:4px;font-size:var(--fs-h4);font-weight:700;line-height:1.3;letter-spacing:-.02em;white-space:nowrap;}
+.asn span{margin-top:5px;font-size:var(--fs-sm);font-weight:300;line-height:1.35;}
+.asn.hl{background:var(--blue);color:#fff;transform:translate(-50%,-50%) scale(1.07);box-shadow:var(--shadow);}
+.asn.hl i{color:#BFE3F8;}
+.as-legend{display:none;list-style:none;margin-top:var(--mt-s);}
+.as-legend li{display:flex;align-items:baseline;gap:12px;padding:13px 16px;border-radius:12px;background:var(--sky);margin-top:8px;transition:background .4s,color .4s;}
+.as-legend li i{font-style:normal;font-weight:700;color:var(--blue);min-width:1.6em;transition:color .4s;}
+.as-legend li b{font-weight:700;} .as-legend li span{margin-left:auto;font-size:var(--fs-sm);font-weight:300;}
+.as-legend li.hl{background:var(--blue);color:#fff;} .as-legend li.hl i{color:#BFE3F8;}
+.duo .card{min-height:clamp(170px,18vw,250px);}
+.duo .k{font-size:var(--fs-h4);font-weight:700;}
+.duo .num{margin-top:10px;font-size:clamp(34px,3.4vw + 12px,64px);font-weight:700;color:var(--blue);line-height:1.15;letter-spacing:-.03em;}
+.duo .num.s{font-size:clamp(20px,1vw + 14px,30px);margin-top:clamp(16px,2.2vw,32px);font-weight:700;letter-spacing:-.02em;}
+.duo .d{margin-top:10px;font-size:var(--fs-body);font-weight:300;}
+.partner-h{margin-top:clamp(40px,5vw,72px);text-align:center;font-size:var(--fs-body);font-weight:700;color:var(--blue);letter-spacing:.14em;}
+.logos{margin-top:clamp(16px,2vw,28px);display:grid;grid-template-columns:repeat(4,1fr);align-items:center;gap:clamp(14px,2.4vw,40px);}
+.logos img{width:auto;height:clamp(40px,4.6vw,64px);margin-inline:auto;filter:grayscale(.15);transition:transform .35s,filter .35s;}
+.logos img:hover{transform:scale(1.08);filter:none;}
+
+/* --- 13 / 14 / 15 / 16 --- */
+.video{margin-top:var(--mt);background:var(--video);border-radius:var(--r);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,1.6vw,22px);cursor:pointer;position:relative;overflow:hidden;}
+.video::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,45%),rgba(159,211,242,.3),transparent 55%);opacity:0;transition:opacity .5s;pointer-events:none;}
+.video:hover::after{opacity:1;}
+.play{width:clamp(54px,6vw,84px);height:clamp(54px,6vw,84px);position:relative;display:flex;align-items:center;justify-content:center;}
+.play::before,.play::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(255,255,255,.45);animation:rip 2.4s ease-out infinite;}
+.play::after{animation-delay:1.2s;}
+@keyframes rip{0%{transform:scale(.8);opacity:.9;}100%{transform:scale(1.8);opacity:0;}}
+.play svg{width:100%;height:100%;fill:#fff;transition:transform .3s;}
+.video:hover .play svg{transform:scale(1.12);}
+.video b{font-size:var(--fs-h3);font-weight:700;}
+.toast{position:absolute;bottom:14px;left:50%;transform:translate(-50%,10px);background:rgba(255,255,255,.14);color:#CFE7F7;padding:7px 16px;border-radius:99px;font-size:13px;opacity:0;transition:opacity .3s,transform .3s;white-space:nowrap;}
+.toast.show{opacity:1;transform:translate(-50%,0);}
+.steps-line{margin-top:var(--mt-s);text-align:center;font-size:var(--fs-body);font-weight:300;}
+.steps-line span{transition:color .3s,font-weight .3s;}
+.steps-line span.on{color:#7FD1FF;font-weight:700;}
+.steps-line i{font-style:normal;margin:0 .5em;color:#8FA4B4;}
+.faq{margin-top:var(--mt);border-top:1px solid var(--line);}
+.fq{border-bottom:1px solid var(--line);}
+.fq button{width:100%;display:flex;align-items:flex-start;gap:clamp(12px,1.6vw,22px);padding:clamp(16px,1.8vw,24px) 2px;text-align:left;font-size:var(--fs-h3);font-weight:700;letter-spacing:-.01em;line-height:1.45;}
+.fq .q{color:var(--blue);font-weight:500;flex:none;}
+.fq .chev{margin-left:auto;flex:none;transition:transform .3s;color:var(--mute);}
+.fq.open .chev{transform:rotate(180deg);color:var(--blue);}
+.fq .a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.fq .a p{padding:0 2px clamp(18px,2vw,28px) clamp(30px,3.4vw,46px);font-size:var(--fs-body);font-weight:300;line-height:1.8;color:var(--body);}
+.ch{display:block;background:#fff;border-radius:var(--r);padding:var(--cp) var(--cp) clamp(22px,2.6vw,36px);}
+.ch small{display:block;font-size:var(--fs-sm);font-weight:700;letter-spacing:.1em;color:var(--mute);}
+.ch .ico{display:flex;align-items:center;justify-content:center;width:clamp(50px,4.6vw,64px);height:clamp(50px,4.6vw,64px);margin-top:clamp(14px,1.8vw,24px);border:2px solid var(--blue);border-radius:clamp(13px,1.3vw,18px);transition:transform .4s cubic-bezier(.2,1.4,.4,1),background .3s;}
+.ch .ico svg{width:52%;height:52%;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s;}
+.ch .ico svg .f{fill:var(--blue);stroke:none;transition:fill .3s;}
+.ch:hover .ico{background:var(--blue);transform:rotate(-7deg) scale(1.08);}
+.ch:hover .ico svg{stroke:#fff;} .ch:hover .ico svg .f{fill:#fff;}
+.ch b{display:inline-flex;gap:.3em;margin-top:clamp(14px,1.8vw,24px);font-size:var(--fs-h4);font-weight:700;color:var(--blue);}
+.ch b i{font-style:normal;transition:transform .3s;} .ch:hover b i{transform:translateX(6px);}
+.ch:hover{box-shadow:var(--shadow-lg);}
+.hp{margin-top:var(--mt);display:flex;flex-wrap:wrap;gap:12px clamp(24px,5vw,80px);}
+.hp a{font-size:var(--fs-h4);font-weight:700;color:var(--blue);display:inline-flex;gap:.3em;}
+.hp a i{font-style:normal;transition:transform .3s;} .hp a:hover i{transform:translateX(6px);}
+.form{margin-top:var(--mt);background:#fff;border-radius:var(--r);padding:clamp(20px,3vw,44px);box-shadow:var(--shadow);}
+.form .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.form h3{font-size:var(--fs-h3);font-weight:700;letter-spacing:-.01em;}
+.form .req-n{font-size:var(--fs-sm);font-weight:300;color:var(--blue);}
+.fgrid{margin-top:var(--mt-s);display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px) clamp(16px,3vw,44px);}
+.fld{display:flex;flex-direction:column;gap:8px;}
+.fld.full{grid-column:1/-1;}
+.fld label{font-size:var(--fs-body);font-weight:700;}
+.fld label em{font-style:normal;margin-left:3px;}
+.fld input,.fld select,.fld textarea{font:inherit;font-weight:300;font-size:var(--fs-body);color:var(--text);padding:clamp(12px,1.1vw,15px) 16px;border:1px solid var(--line);border-radius:8px;background:#fff;transition:border-color .25s,box-shadow .25s;width:100%;}
+.fld select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%238A97A3' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:38px;}
+.fld input::placeholder,.fld textarea::placeholder{color:#9AA5AF;}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(9,123,194,.15);}
+.fld.bad input{border-color:#E4572E;box-shadow:0 0 0 3px rgba(228,87,46,.12);}
+.fld textarea{min-height:110px;resize:vertical;}
+.consent{margin-top:var(--mt-s);padding-top:var(--mt-s);border-top:1px solid var(--line);display:flex;align-items:center;gap:10px;font-size:var(--fs-body);font-weight:700;}
+.consent input{width:20px;height:20px;accent-color:var(--blue);}
+.consent label{cursor:pointer;} .consent .view{margin-left:auto;font-weight:300;color:var(--blue);text-decoration:underline;cursor:pointer;}
+.submit{margin-top:var(--mt-s);width:100%;padding:clamp(15px,1.4vw,19px);border-radius:8px;background:var(--blue);color:#fff;font-size:var(--fs-h4);font-weight:700;}
+.submit:disabled{background:#B8C4CE;cursor:not-allowed;}
+.msg{max-height:0;overflow:hidden;opacity:0;text-align:center;font-weight:500;font-size:var(--fs-body);color:var(--blue);transition:opacity .3s,max-height .3s;}
+.msg.show{max-height:60px;opacity:1;margin-top:14px;}
+.ft{background:#fff;padding:clamp(22px,2.6vw,36px) 0;}
+.ft .in{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+.ft img{height:clamp(32px,3.4vw,46px);width:auto;}
+.ft b{font-size:var(--fs-body);font-weight:700;} .ft b i{font-style:normal;margin:0 .6em;font-weight:300;color:var(--mute);}
+.top-btn{position:fixed;right:20px;bottom:20px;width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s,background .3s;z-index:900;}
+.top-btn.show{opacity:1;pointer-events:auto;transform:none;} .top-btn:hover{background:var(--blue);}
+.top-btn .tring{position:absolute;inset:-4px;width:calc(100% + 8px);height:calc(100% + 8px);transform:rotate(-90deg);}
+.top-btn .trk{fill:none;stroke:rgba(19,47,68,.12);stroke-width:2;} .top-btn .tbar{fill:none;stroke:var(--blue);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;}
+
+
+/* ================= interaction layer ================= */
+/* masked line reveal for headings */
+.ln{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em;}
+.ln>.in2{display:inline-block;transform:translateY(115%) rotate(2.5deg);transform-origin:0 100%;transition:transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*.13s + .05s);will-change:transform;}
+.in .ln>.in2,.reveal.in .ln>.in2{transform:none;}
+.split.reveal{opacity:1;transform:none;}
+html:not(.js) .ln>.in2{transform:none;}
+/* reveal variants */
+.stagger[data-fx="lr"]>*:nth-child(odd){transform:translateX(-60px);}
+.stagger[data-fx="lr"]>*:nth-child(even){transform:translateX(60px);}
+.stagger[data-fx="zoom"]>*{transform:scale(.84);}
+.stagger[data-fx="flip"]>*{transform:perspective(900px) rotateX(-36deg) translateY(34px);transform-origin:50% 100%;}
+.stagger[data-fx="fan"]>*:nth-child(3n+1){transform:translateX(-52px) rotate(-3.5deg);}
+.stagger[data-fx="fan"]>*:nth-child(3n+2){transform:translateY(46px);}
+.stagger[data-fx="fan"]>*:nth-child(3n){transform:translateX(52px) rotate(3.5deg);}
+.stagger.in[data-fx]>*{transform:none;}
+.stagger.in[data-fx]>*:hover{transform:translateY(-5px);}
+.stagger.settled>*{transition-delay:0s!important;}
+/* 3D tilt + glare */
+.tilt{position:relative;}
+.tilt::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.42),transparent 58%);opacity:0;transition:opacity .35s;pointer-events:none;}
+.tilt.tilting{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-8px)!important;transition:transform .14s ease-out,box-shadow .3s!important;transition-delay:0s!important;box-shadow:var(--shadow-lg);z-index:2;}
+.tilt.tilting::after{opacity:1;}
+/* magnetic + ripple buttons */
+.mag{translate:var(--tx,0px) var(--ty,0px);transition:translate .45s cubic-bezier(.2,.8,.2,1),transform .25s,box-shadow .25s,background .25s,color .25s;}
+.mag.pulling{transition:translate .1s linear,transform .25s,box-shadow .25s,background .25s,color .25s;}
+.rip{position:relative;overflow:hidden;}
+.rip .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:ripple .75s ease-out forwards;pointer-events:none;}
+.btn.line .ripple,.eq-toggle .ripple{background:rgba(9,123,194,.28);}
+@keyframes ripple{to{transform:scale(1);opacity:0;}}
+/* sweep-fill on hover */
+.mk,.step{position:relative;overflow:hidden;isolation:isolate;}
+.mk::before,.step::before{content:'';position:absolute;inset:-2px;background:var(--blue);transform:scaleX(0);transform-origin:left center;transition:transform .55s cubic-bezier(.2,.8,.2,1);z-index:-1;}
+.mk:hover::before,.step:hover::before{transform:scaleX(1);}
+/* icon line-draw */
+.js .who svg *{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.5s cubic-bezier(.4,.1,.2,1) .35s;}
+.js .stagger.in .who svg *{stroke-dashoffset:0;}
+/* shine sweep on bars */
+.bar{position:relative;overflow:hidden;}
+.bar::after{content:'';position:absolute;top:0;bottom:0;left:-45%;width:32%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.2),transparent);transform:skewX(-18deg);animation:shine 5.5s ease-in-out infinite;pointer-events:none;}
+.bar.sky::after{background:linear-gradient(100deg,transparent,rgba(9,123,194,.14),transparent);}
+@keyframes shine{0%,55%{left:-45%;}100%{left:135%;}}
+/* comparison cards: hovered side grows */
+.vs{transition:grid-template-columns .65s cubic-bezier(.2,.8,.2,1);}
+@media (min-width:901px){.vs:has(.b:hover){grid-template-columns:.78fr 1.22fr;}.vs:has(.a:hover){grid-template-columns:1.22fr .78fr;}}
+/* decorative parallax blobs */
+.blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(46px);translate:0 var(--py,0px);z-index:0;will-change:translate;}
+.blob.b1{width:clamp(220px,34vw,460px);height:clamp(220px,34vw,460px);right:-6%;top:10%;background:rgba(9,123,194,.14);}
+.blob.b2{width:clamp(160px,24vw,320px);height:clamp(160px,24vw,320px);left:-5%;top:48%;background:rgba(253,107,47,.12);}
+.blob.b3{width:clamp(200px,30vw,420px);height:clamp(200px,30vw,420px);right:-8%;top:16%;background:rgba(9,123,194,.14);}
+.blob.glow{width:clamp(260px,40vw,560px);height:clamp(260px,40vw,560px);left:50%;top:20%;margin-left:-20vw;background:rgba(9,123,194,.38);}
+.sec>.wrap{position:relative;z-index:1;}
+.sec.bg-sky,.sec.bg-navy,.sec:has(.blob){overflow:hidden;}
+/* soap bubbles (hero) */
+.bubbles{position:absolute;left:52%;right:0;top:0;height:clamp(300px,44vw,580px);pointer-events:none;z-index:2;}
+.bub{position:absolute;left:var(--x);bottom:-12%;width:var(--s);height:var(--s);border-radius:50%;pointer-events:auto;cursor:pointer;background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.95) 0 7%,rgba(255,255,255,.28) 24%,rgba(173,216,242,.3) 62%,rgba(9,123,194,.24) 100%);border:1.5px solid rgba(9,123,194,.3);box-shadow:inset -6px -8px 14px rgba(9,123,194,.12),0 8px 20px rgba(9,123,194,.1);animation:bub var(--d) linear var(--dl) infinite;}
+@keyframes bub{0%{transform:translate(0,0) scale(.7);opacity:0;}8%{opacity:1;}35%{transform:translate(-20px,-170px) scale(.95);}65%{transform:translate(18px,-350px) scale(1.02);}100%{transform:translate(-8px,-560px) scale(1.08);opacity:0;}}
+.bub.pop{animation:none;transform:scale(1.8);opacity:0;transition:transform .28s ease-out,opacity .28s;pointer-events:none;}
+.drop{position:absolute;width:7px;height:7px;border-radius:50%;background:rgba(9,123,194,.5);pointer-events:none;}
+@media (max-width:900px){.bubbles{left:0;opacity:.6;z-index:0;}}
+@media (hover:none){.bubbles{pointer-events:none;}}
+/* custom cursor */
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:99999;border-radius:50%;opacity:0;transition:opacity .3s,width .3s,height .3s,margin .3s,background .3s,border-color .3s;}
+.cur-dot{width:7px;height:7px;margin:-3.5px 0 0 -3.5px;background:var(--blue);}
+.cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid rgba(9,123,194,.55);}
+.cur-ring.hot{width:68px;height:68px;margin:-34px 0 0 -34px;background:rgba(9,123,194,.1);border-color:var(--blue);}
+body.has-cur .cur-dot,body.has-cur .cur-ring{opacity:1;}
+body.cur-text .cur-dot,body.cur-text .cur-ring{opacity:0;}
+/* lightbox nav */
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:34px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s;z-index:2;}
+.lb-nav:hover{background:var(--blue);transform:translateY(-50%) scale(1.1);}
+.lb-nav.prev{left:clamp(10px,4vw,56px);} .lb-nav.next{right:clamp(10px,4vw,56px);}
+/* form: meter, check, spinner */
+.f-meter{height:4px;border-radius:99px;background:var(--line);overflow:hidden;margin-bottom:clamp(14px,1.6vw,22px);}
+.f-meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#5CC4F5);border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1);}
+.fld{position:relative;}
+.fld[data-req].ok::after{content:'✓';position:absolute;right:14px;bottom:clamp(11px,1vw,14px);width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;animation:pop .35s cubic-bezier(.2,1.6,.4,1);}
+@keyframes pop{from{transform:scale(0);}to{transform:scale(1);}}
+.submit.loading::before{content:'';display:inline-block;width:16px;height:16px;margin-right:10px;vertical-align:-3px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin2 .7s linear infinite;}
+@keyframes spin2{to{transform:rotate(360deg);}}
+.cf{position:fixed;z-index:99998;pointer-events:none;border-radius:2px;}
+.fq.open .q{animation:qpop .5s cubic-bezier(.2,1.6,.4,1);}
+@keyframes qpop{from{transform:scale(.4) rotate(-30deg);}to{transform:none;}}
+
+/* --- responsive --- */
+@media (max-width:900px){
+  section[id]{scroll-margin-top:76px;}
+  .logo img{height:36px;} .site-header.scrolled .logo img{height:30px;}
+  .cta{display:none;} .burger{display:block;}
+  .menu{position:absolute;left:0;right:0;top:100%;background:rgba(246,241,235,.98);backdrop-filter:blur(10px);border-top:1px solid var(--line);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .4s ease,visibility 0s .4s;box-shadow:0 18px 30px rgba(19,47,68,.12);}
+  .menu.open{max-height:calc(100vh - 70px);overflow-y:auto;visibility:visible;transition:max-height .4s ease,visibility 0s;}
+  .menu-in{display:grid;grid-template-columns:1fr 1fr;gap:8px;overflow:visible;padding:14px var(--gutter) 22px;-webkit-mask-image:none;mask-image:none;}
+  .menu a{display:flex;border-radius:12px;padding:13px 14px;background:#fff;font-size:var(--fs-body);}
+  .menu a .n{display:inline;}
+  .menu a.go{grid-column:1/-1;justify-content:center;background:var(--blue);color:#fff;}
+  .menu a.go .n{color:#BFE3F8;}
+  .g3,.g4{grid-template-columns:1fr 1fr;}
+  .g3.keep3{grid-template-columns:1fr;}
+  .eqgrid{grid-template-columns:1fr 1fr;}
+  .logos{grid-template-columns:1fr 1fr;row-gap:24px;}
+  .pay{grid-template-columns:1fr;} .pay .r{text-align:left;}
+}
+@media (max-width:640px){
+  .asn b,.asn span{display:none;}
+  .asn i{font-size:clamp(15px,4.4vw,19px);letter-spacing:0;}
+  .as-legend{display:block;}
+  .g2,.g3,.g4{grid-template-columns:1fr;}
+  .g4.keep2,.eqgrid{grid-template-columns:1fr 1fr;}
+  .stats{grid-template-columns:1fr;} .stats div+div{border-top:1px solid rgba(255,255,255,.2);}
+  .fgrid{grid-template-columns:1fr;}
+  .step-grid{grid-template-columns:1fr 1fr;}
+  .mkgrid{grid-template-columns:1fr;}
+  .hero-photo{aspect-ratio:4/3;}
+  .statwrap{margin-top:-8%;}
+  .eq{padding:12px;} .eq h3{font-size:14.5px;} .eq p{font-size:13px;}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.reveal,.stagger>*{opacity:1;transform:none!important;}.ln>.in2{transform:none;}.bubbles,.blob{display:none;}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap hd">
+    <a class="logo" href="#top" aria-label="워시Q Care"><img src="images/logo/washq_care.png" alt="워시Q Care Premium Laundry Service"></a>
+    <div class="hd-r">
+      <a class="cta" href="#s16">울맘 창업 상담</a>
+      <button class="burger" id="burger" type="button" aria-label="전체 메뉴 열기" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="menu" id="menu" aria-label="전체 섹션 메뉴">
+    <div class="wrap menu-in" id="menuIn">
+      <a href="#s01"><i class="n">01</i>홈</a>
+      <a href="#s02"><i class="n">02</i>서비스의 차이</a>
+      <a href="#s05"><i class="n">03</i>창업의 차이</a>
+      <a href="#s09"><i class="n">04</i>운영지원 및 마케팅</a>
+      <a href="#s14"><i class="n">05</i>FAQ</a>
+      <a href="#s16" class="go"><i class="n">06</i>울맘 창업 상담</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+<!-- 01 -->
+<section class="hero" id="s01" data-grp="s01">
+  <div class="blob b1" data-p="-.22" aria-hidden="true"></div><div class="blob b2" data-p=".18" aria-hidden="true"></div>
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="noteline reveal"><b>울맘</b>은 생업형 유인 빨래방 ‘워시Q케어’의 서비스명입니다.</p>
+    <h1 class="reveal split"><span class="ln"><span class="in2">창업,</span></span><span class="ln c"><span class="in2">생활빨래에서 답을 찾다.</span></span></h1>
+    <p class="sub reveal">고객의 빨래를 대신하고, 동네의 일감을 연결하는 생활빨래 매장</p>
+    <p class="p reveal">울맘은 점주가 직접 운영하며 고객을 만드는<br>생업형 유인 빨래방 서비스입니다.</p>
+    <div class="btns reveal">
+      <a class="btn fill" href="#s16">울맘 창업 상담</a>
+      <a class="btn line" href="#s13">운영 방식 살펴보기</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <div class="hero-clip"><img class="hero-photo" src="images/hero/hero.jpg" alt="매장에서 수건을 개고 있는 점주" fetchpriority="high"></div>
+    <div class="statwrap">
+      <div class="stats stagger" data-fx="rise">
+        <div><strong><span data-count="4" data-suffix="가지">4가지</span></strong><span>서비스 통합 운영</span></div>
+        <div><strong><span data-count="60" data-suffix="개월">60개월</span></strong><span>5,000만원 무이자</span></div>
+        <div><strong>A·B·C</strong><span>맞춤 장비 구성</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-end"></div>
+</section>
+
+<!-- 02 -->
+<section class="sec" id="s02" data-grp="s02">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>02</b>서비스의 차이</div>
+    <h2 class="h2 reveal">기계만 이용하는 빨래방에서,<br><em>빨래를 맡기는 매장으로</em></h2>
+    <p class="lead reveal">직접 빨래하는 수고를 줄이는 것.<br>울맘은 고객이 필요로 하는 편의에서 새로운 수요를 찾습니다.</p>
+    <div class="mt grid g2 vs stagger" data-fx="lr">
+      <div class="card a">
+        <div class="lab">기존 셀프 빨래방</div>
+        <div class="big">고객이 직접</div>
+        <p class="txt">세탁물 투입 · 건조기로 이동 · 회수<br>세탁·건조를 기다리고 정리하는 과정</p>
+      </div>
+      <div class="card b">
+        <div class="lab">울맘 생활빨래 서비스</div>
+        <div class="big">매장이 대신</div>
+        <p class="txt flow-hl" id="flowHl"><span>접수</span> · <span>세탁</span> · <span>건조</span> · <span>정리</span> · <span>인도</span><br>고객의 시간과 노력을 줄이는 서비스</p>
+      </div>
+    </div>
+    <div class="bar sky reveal">맡기고 찾기부터 수거·배송까지, 고객에게 맞는 이용 방식으로.</div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="sec bg-sky" id="s03" data-grp="s02">
+  <div class="blob b3" data-p=".2" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>02</b>서비스의 차이</div>
+    <h2 class="h2 reveal">하나의 매장에서,<br><em>4가지 수요를 함께</em></h2>
+    <div class="mt grid g2 stagger" data-fx="flip">
+      <article class="card svc"><div class="ph"><img src="images/services/self-wash.jpg" alt="세탁기에 빨래를 넣는 고객" loading="lazy"></div><div class="tx"><div class="no"><b>01</b>셀프 빨래</div><div class="ct">고객이 직접 세탁·건조</div><p class="cd">기존 셀프 이용 수요를 그대로.<br>매장의 세탁·건조 장비를 이용합니다.</p></div></article>
+      <article class="card svc"><div class="ph"><img src="images/services/delivery.jpg" alt="고객에게 셔츠를 보여주는 점주" loading="lazy"></div><div class="tx"><div class="no"><b>02</b>빨래 대행</div><div class="ct">맡긴 빨래를 정리까지</div><p class="cd">생활빨래 접수 후 세탁·건조·개기까지.<br>완성된 빨래를 정돈해 전달합니다.</p></div></article>
+      <article class="card svc"><div class="ph"><img src="images/services/pickup.jpg" alt="Wool-mom 배송 차량" loading="lazy"></div><div class="tx"><div class="no"><b>03</b>B2C 수거·배송</div><div class="ct">오가는 수고까지 덜어주기</div><p class="cd">가정 고객의 빨래를 수거하고<br>세탁을 마친 뒤 약속한 시간에 전달합니다.</p></div></article>
+      <article class="card svc"><div class="ph"><img src="images/services/b2b.jpg" alt="미용실과 헬스장의 수건" loading="lazy"></div><div class="tx"><div class="no"><b>04</b>B2B 정기 세탁</div><div class="ct">사업장의 반복 물량까지</div><p class="cd">미용실·헬스장·소형 숙소의<br>품목·물량·세탁 주기를 협의합니다.</p></div></article>
+    </div>
+    <p class="foot-line reveal">물세탁 가능한 생활의류 · 수건 · 침구 중심의 생활빨래 서비스</p>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="sec" id="s04" data-grp="s02">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>02</b>서비스의 차이</div>
+    <h2 class="h2 reveal">유인 운영으로,<br><em>편의 · 물량 · 매출을 연결합니다.</em></h2>
+    <div class="mt grid g3 keep3 stagger" data-fx="zoom">
+      <div class="card who t-cream"><svg viewBox="0 0 64 64"><circle cx="32" cy="17" r="11"/><rect x="9" y="35" width="46" height="21" rx="10.5"/></svg><h3>고객</h3><div class="ct">시간과 수고를 줄이고</div><p class="cd">맡기고 찾는 번거로움을 줄여<br>고객의 일과 시간을 덜어드립니다.</p></div>
+      <div class="card who t-sky"><svg viewBox="0 0 64 64"><path d="M9 26 17 8h30l8 18z"/><path d="M13 26v30h38V26"/><rect x="26" y="34" width="12" height="22"/></svg><h3>매장</h3><div class="ct">단골과 정기물량을 더하고</div><p class="cd">셀프 이용 고객부터 단골과 지역 사업장(B2B) 물량을 확보합니다.</p></div>
+      <div class="card who t-cream"><svg viewBox="0 0 64 64"><circle cx="32" cy="17" r="11"/><rect x="9" y="35" width="46" height="21" rx="10.5"/><path d="M23 37v19M41 37v19M23 46h18"/></svg><h3>점주</h3><div class="ct">추가 수익으로 연결하고</div><p class="cd">늘어난 세탁 수요를 점주의 추가 수익으로 연결합니다.</p></div>
+    </div>
+    <div class="bar navy reveal">고객의 편의가, 우리 매장의 새로운 일감이 됩니다.</div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section class="sec bg-navy" id="s13" data-grp="s02">
+  <div class="blob glow" data-p=".15" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>02</b>서비스의 차이</div>
+    <h2 class="h2 reveal">울맘의 하루를 보면,<br>운영 방식이 보입니다.</h2>
+    <div class="video reveal" id="video" role="button" tabindex="0" aria-label="울맘 소개영상 재생">
+      <div class="play"><svg viewBox="0 0 24 24"><path d="M7 4v16l14-8z"/></svg></div>
+      <b>울맘 소개영상</b>
+      <span class="toast" id="toast">영상 준비 중입니다.</span>
+    </div>
+    <p class="steps-line reveal" id="stepsLine"><span>접수</span><i>→</i><span>세탁·건조</span><i>→</i><span>개기·검수</span><i>→</i><span>전달</span></p>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="sec" id="s08" data-grp="s02">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>02</b>서비스의 차이</div>
+    <h2 class="h2 reveal">가정의 단골부터,<br><em>사업장의 정기물량까지</em></h2>
+    <p class="lead reveal">매일·매주 반복되는 빨래 수요를 찾아,<br>우리 매장의 처리 여력에 맞게 거래처를 늘려갑니다.</p>
+    <div class="mt grid g3 keep3 biz stagger" data-fx="lr">
+      <div class="card t-sky"><div class="ctitle">미용실·이용실</div><p class="cbody">수건 · 가운<br>오염과 소재별 처리 기준</p></div>
+      <div class="card t-cream"><div class="ctitle">헬스장·운동시설</div><p class="cbody">회원용 수건 · 운동복<br>일일 물량과 회수 시간</p></div>
+      <div class="card t-sky"><div class="ctitle">소형 숙박시설</div><p class="cbody">시트 · 커버 · 수건<br>납기와 성수기 물량</p></div>
+    </div>
+    <div class="grid g2 biz stagger" data-fx="zoom" style="margin-top:var(--gap)">
+      <div class="card wide t-sky biz wide"><div class="ctitle">본사</div><p class="cbody">영업자료·마케팅·거래처 확보 지원</p></div>
+      <div class="card wide t-cream biz wide"><div class="ctitle">점주</div><p class="cbody">지역 상담·세탁 서비스·거래처 관리</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="sec bg-cream" id="s05" data-grp="s05">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>03</b>창업의 차이</div>
+    <h2 class="h2 reveal">창업,<br><em>일하는 방식에서 차이를 찾다.</em></h2>
+    <p class="lead dark reveal">반복되는 조리·제조에서 → 장비가 세탁·건조를 맡는 운영으로</p>
+    <div class="mt-s grid g3 keep3 stagger" data-fx="fan">
+      <article class="card work"><div class="ph"><img src="images/work/chicken.jpg" alt="치킨 조리 현장" loading="lazy"><span class="tag" style="--w:31.4%">치킨</span></div><div class="tx"><h3>치킨</h3><p>뜨거운 기름, 반복되는 튀김<br>기름 관리와 마감 청소</p></div></article>
+      <article class="card work"><div class="ph"><img src="images/work/coffee.jpg" alt="커피 제조 현장" loading="lazy"><span class="tag" style="--w:32.6%">커피</span></div><div class="tx"><h3>커피</h3><p>종일 서서 만드는 음료<br>이어지는 주문·제조·응대</p></div></article>
+      <article class="card work"><div class="ph"><img src="images/work/dining.jpg" alt="외식 조리 현장" loading="lazy"><span class="tag" style="--w:33.4%">외식</span></div><div class="tx"><h3>외식</h3><p>재료 손질부터 조리까지<br>서빙·설거지·마감 정리</p></div></article>
+    </div>
+    <div class="greybar reveal"><b>주문품에 따라, 재료와 제조·조리 방식이 달라집니다.</b><span>재료 준비 → 메뉴별 제조·조리 → 포장·서빙 → 세척·정리</span></div>
+    <div class="center-head reveal"><h3>울맘은 세탁·건조를 장비가 맡습니다.</h3><p>점주는 그 시간에 고객과 서비스에 집중할 수 있습니다.</p></div>
+    <div class="mt-s grid g3 keep3 benefit stagger" data-fx="lr">
+      <div class="card t-sky"><div class="ctitle">반복 조리 부담을 덜고</div><p class="cbody">기름·불 앞 조리 대신<br>장비 중심으로 세탁·건조</p></div>
+      <div class="card t-sky"><div class="ctitle">작업 시간을 나누고</div><p class="cbody">장비가 작동하는 동안<br>접수·응대·정리 업무 배치</p></div>
+      <div class="card t-sky"><div class="ctitle">수익 기회를 넓히고</div><p class="cbody">대행·수거배송에<br>사업장 정기세탁까지</p></div>
+    </div>
+    <p class="fine reveal">점주는 분류·투입·이동·개기·검수·고객응대를 수행합니다.<br>물량과 배송 범위에 맞게 작업 시간과 인력을 계획합니다.</p>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="sec" id="s06" data-grp="s05">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>03</b>창업의 차이</div>
+    <h2 class="h2 reveal">창업 비용부터 운영지원까지,<br><em>울맘</em></h2>
+    <p class="sub-title reveal">창업 타입 및 본사 직접 할부</p>
+    <div class="mt-s grid g3 keep3 stagger" data-fx="fan" id="typeGrid">
+      <div class="card type t-cream" tabindex="0"><span class="chk">✓</span><div class="tn">A TYPE</div><div class="tp">4천만원대</div><div class="td">생활빨래 중심</div></div>
+      <div class="card type t-sky" tabindex="0"><span class="chk">✓</span><div class="tn">B TYPE</div><div class="tp">5천만원대</div><div class="td">생활빨래 + 정기물량</div></div>
+      <div class="card type t-cream" tabindex="0"><span class="chk">✓</span><div class="tn">C TYPE</div><div class="tp">6천만원대</div><div class="td">넉넉한 처리용량</div></div>
+    </div>
+    <div class="pay reveal">
+      <div class="l"><small>본사 직접 할부</small><div class="big"><span data-count="5000" data-suffix="만원">5,000만원</span></div><div class="bot">장비대금 분할 납부</div><div class="prog"><i id="payBar"></i></div></div>
+      <div class="r"><small>&nbsp;</small><div class="big"><span data-count="60" data-suffix="개월">60개월</span> 무이자</div><div class="bot">월 약 <span data-count="83.3" data-decimal="1" data-suffix="만원">83.3만원</span> · 정상 납부 기준</div></div>
+    </div>
+    <p class="fine reveal">타입별 금액은 본사 할부를 활용하는 초기 창업비 구간이며, 할부금은 별도 납부합니다.<br>임차보증금은 별도입니다. 인테리어·설비공사 포함 범위, 부가세와 현장별 추가비용은<br>개별 견적으로 확인합니다. 중도해지 시 잔여대금에 별도 정산조건이 적용됩니다.</p>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="sec bg-sky" id="s07" data-grp="s05">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>03</b>창업의 차이</div>
+    <h2 class="h2 reveal">우리 매장의 처리용량,<br><em>장비 구성에서 확인하세요.</em></h2>
+    <div class="eq-bar mt reveal"><button type="button" class="eq-toggle" id="eqToggle" aria-expanded="false" aria-controls="eqGrid"><span class="lbl">장비 사진 보기</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button></div>
+    <div class="mt-s grid g3 eqgrid stagger" data-fx="zoom" id="eqGrid">
+      <div class="card eq" data-n="IPSO IA180" data-s="세탁기 20kg"><div class="imw"><div class="im"><img src="images/equipment/ipso-ia180.png" alt="IPSO IA180" loading="lazy"></div></div><h3>IPSO IA180</h3><p>세탁기 20kg</p></div>
+      <div class="card eq" data-n="IPSO IA240" data-s="세탁기 27kg"><div class="imw"><div class="im"><img src="images/equipment/ipso-ia240.png" alt="IPSO IA240" loading="lazy"></div></div><h3>IPSO IA240</h3><p>세탁기 27kg</p></div>
+      <div class="card eq" data-n="IPSO IA280" data-s="세탁기 31kg"><div class="imw"><div class="im"><img src="images/equipment/ipso-ia280.png" alt="IPSO IA280" loading="lazy"></div></div><h3>IPSO IA280</h3><p>세탁기 31kg</p></div>
+      <div class="card eq" data-n="IPSO DR445" data-s="2단 건조기 20kg × 2"><div class="imw"><div class="im"><img src="images/equipment/ipso-dr445.png" alt="IPSO DR445" loading="lazy"></div></div><h3>IPSO DR445</h3><p>2단 건조기 20kg × 2</p></div>
+      <div class="card eq" data-n="IPSO DR55S" data-s="건조기 24kg"><div class="imw"><div class="im"><img src="images/equipment/ipso-dr55s.png" alt="IPSO DR55S" loading="lazy"></div></div><h3>IPSO DR55S</h3><p>건조기 24kg</p></div>
+      <div class="card eq" data-n="IPSO DR75" data-s="건조기 34kg"><div class="imw"><div class="im"><img src="images/equipment/ipso-dr75.png" alt="IPSO DR75" loading="lazy"></div></div><h3>IPSO DR75</h3><p>건조기 34kg</p></div>
+      <div class="card eq" data-n="LG TITAN F17SED" data-s="세탁기 17kg"><div class="imw"><div class="im"><img src="images/equipment/lg-f17sed.png" alt="LG TITAN F17SED" loading="lazy"></div></div><h3>LG TITAN F17SED</h3><p>세탁기 17kg</p></div>
+      <div class="card eq" data-n="LG TITAN RN12SBD" data-s="건조기 13.6kg · 가스식"><div class="imw"><div class="im"><img src="images/equipment/lg-rn12sbd.png" alt="LG TITAN RN12SBD" loading="lazy"></div></div><h3>LG TITAN RN12SBD</h3><p>건조기 13.6kg · 가스식</p></div>
+      <div class="card eq" data-n="멀티키오스크" data-s="운영 부대장비"><div class="imw"><div class="im"><img src="images/equipment/kiosk.png" alt="멀티키오스크" loading="lazy"></div></div><h3>멀티키오스크</h3><p>운영 부대장비</p></div>
+    </div>
+    <h3 class="tbl-title reveal">타입별 IPSO 장비 구성</h3>
+    <div class="tbl-wrap reveal"><table>
+      <thead><tr><th style="width:16%">구분</th><th style="width:36%">세탁기</th><th>건조기</th></tr></thead>
+      <tbody>
+        <tr><td class="ty">A TYPE</td><td>27kg 1대 · 31kg 1대</td><td>20kg 2단 1대 · 24kg 1대</td></tr>
+        <tr><td class="ty">B TYPE</td><td>27kg 2대 · 31kg 1대</td><td>20kg 2단 1대 · 24kg 1대</td></tr>
+        <tr><td class="ty">C TYPE</td><td>20kg 1대 · 27kg 2대 · 31kg 1대</td><td>20kg 2단 1대 · 24kg 1대 · 34kg 1대</td></tr>
+      </tbody>
+    </table></div>
+    <p class="common reveal"><b>전 타입 공통 구성</b><br>LG 타이탄 세탁기 17kg 2대 + 건조기 13.6kg 2대<br>멀티키오스크 · 세제공급장치</p>
+  </div>
+</section>
+<div class="lightbox" id="lightbox"><button type="button" class="lb-nav prev" aria-label="이전 장비">‹</button><button type="button" class="lb-nav next" aria-label="다음 장비">›</button><div class="lb-card"><img id="lbImg" alt=""><h4 id="lbName"></h4><p id="lbSpec"></p><button type="button" id="lbClose">닫기</button></div></div>
+
+<!-- 11 -->
+<section class="sec" id="s11" data-grp="s05">
+  <div class="blob b3" data-p="-.18" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>03</b>창업의 차이</div>
+    <h2 class="h2 reveal">상담부터 개점까지,<br><em>준비할 일을 순서대로</em></h2>
+    <div class="mt grid g3 step-grid stagger" data-fx="flip" id="stepGrid">
+      <div class="card step active"><div class="n">01</div><h3>상담·수요 확인</h3><p>상권·입지와 지역 고객,<br>운영 계획을 함께 확인</p></div>
+      <div class="card step"><div class="n">02</div><h3>입지·장비 검토</h3><p>공간·전기·가스 조건,<br>물량에 맞는 장비 구성</p></div>
+      <div class="card step"><div class="n">03</div><h3>계약·일정 확정</h3><p>견적·할부 조건,<br>본사와 점주의 역할 확인</p></div>
+      <div class="card step"><div class="n">04</div><h3>시공·장비 설치</h3><p>설비·인테리어와 장비 설치,<br>가동 상태 확인</p></div>
+      <div class="card step"><div class="n">05</div><h3>실습·오픈 준비</h3><p>세탁·검수·접수 교육,<br>수거배송 동선 준비</p></div>
+      <div class="card step"><div class="n">06</div><h3>개점·영업 지원</h3><p>고객 확보와 영업 지원,<br>품질·비용 점검</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="sec bg-cream" id="s09" data-grp="s09">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>04</b>운영지원 및 마케팅</div>
+    <h2 class="h2 reveal">오픈부터 운영까지,<br><em>혼자 준비하지 않도록</em></h2>
+    <div class="mt grid g2 stagger" data-fx="lr">
+      <div class="card sup hq"><h3>본사<span>개점·운영 지원</span></h3><ul class="stagger" data-fx="lr"><li>상권·입지 검토</li><li>장비 구성·설치</li><li>장비 사용교육·세탁 실습</li><li>기술 A/S·운영점검·재교육</li><li>B2B 영업자료·거래처 확보 지원</li></ul></div>
+      <div class="card sup ow"><h3>점주<span>매장 운영 실행</span></h3><ul class="stagger" data-fx="lr"><li>매장 청결·고객 응대</li><li>세탁대행·수거배송</li><li>품질·납기·혼입 관리</li><li>지역 사업장 상담</li><li>단골·거래처 관리</li></ul></div>
+    </div>
+    <div class="bar navy reveal">장비의 사용법부터, 매일의 운영까지.</div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="sec bg-sky" id="s10" data-grp="s09">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>04</b>운영지원 및 마케팅</div>
+    <h2 class="h2 reveal">우리 동네 고객과 만나는,<br><em>울맘의 마케팅</em></h2>
+    <p class="lead reveal">매장과 지역 여건에 맞춰 마케팅 방향을 함께 검토합니다.</p>
+    <div class="mt grid g2 mkgrid stagger" data-fx="lr">
+      <div class="card mk t-white"><span class="n">01</span><span class="t">지도 등록·지역 검색</span></div>
+      <div class="card mk t-cream"><span class="n">02</span><span class="t">블로그·SNS 콘텐츠</span></div>
+      <div class="card mk t-white"><span class="n">03</span><span class="t">지역 커뮤니티</span></div>
+      <div class="card mk t-cream"><span class="n">04</span><span class="t">매장·생활권 홍보</span></div>
+      <div class="card mk t-white"><span class="n">05</span><span class="t">오픈 행사</span></div>
+      <div class="card mk t-cream"><span class="n">06</span><span class="t">B2B 제안·영업지원</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="sec" id="s12" data-grp="s09">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>04</b>운영지원 및 마케팅</div>
+    <h2 class="h2 reveal">워시큐의 현장 경험,<br><em>울맘의 운영을 뒷받침합니다.</em></h2>
+    <p class="company reveal">워시큐<i>|</i>운영사 (주)와스코</p>
+    <div class="mt-s grid g4 keep2 stagger" data-fx="zoom">
+      <div class="card stat t-sky"><strong><span data-count="10" data-suffix="년+">10년+</span></strong><span>업력</span></div>
+      <div class="card stat t-cream"><strong><span data-count="29" data-suffix="명">29명</span></strong><span>직원 수</span></div>
+      <div class="card stat t-sky"><strong><span data-count="400" data-suffix="호점+">400호점+</span></strong><span>오픈 빨래방</span></div>
+      <div class="card stat t-cream"><strong><span data-count="5000" data-suffix="대+">5,000대+</span></strong><span>누적 판매</span></div>
+    </div>
+    <h3 class="sub-h reveal">개점부터 운영관리까지, 점주를 지원합니다.</h3>
+    <div class="mt-s grid g3 keep3 benefit stagger" data-fx="fan">
+      <div class="card t-sky"><div class="ctitle">매출을 지키는 장비 관리</div><p class="cbody">장비가 멈추면 매출도 멈춥니다.<br>원인 파악과 현장 조치로 매장 운영을 지원합니다.</p></div>
+      <div class="card t-cream"><div class="ctitle">함께 높이는 운영 경쟁력</div><p class="cbody">워시큐의 현장 경험을 바탕으로<br>장비 사용과 세탁 업무의 운영 노하우를 전합니다.</p></div>
+      <div class="card t-sky"><div class="ctitle">개점 이후에도 지원</div><p class="cbody">창업부터 운영관리까지<br>점주의 매장과 장비를 지속적으로 살펴봅니다.</p></div>
+    </div>
+    <div class="bar navy reveal">오픈 이후에도 장비와 운영이 지속가능합니다.</div>
+    <h3 class="sub-h reveal">본사가 직접 운영하는 A/S 조직</h3>
+    <p class="lead reveal">접수부터 현장 조치, 원인 보고와 분석까지.</p>
+    <div class="as-wrap reveal">
+    <div class="as-ring" id="asRing">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="36" fill="none" stroke="#DCEBF5" stroke-width=".5"/><circle cx="50" cy="50" r="17" fill="#F1F8FC"/><circle class="pulse" cx="50" cy="50" r="17" fill="none" stroke="#B9DCF2" stroke-width=".35" stroke-dasharray=".8 1.2"/><circle r="1.15" fill="#097BC2"><animateMotion dur="14s" repeatCount="indefinite" path="M50.0 14.0A36.0 36.0 0 1 1 50.0 86.0A36.0 36.0 0 1 1 50.0 14.0"/></circle><g class="arc a1"><path class="ln" d="M65.04 17.29A36.0 36.0 0 0 1 74.77 23.88"/><path class="hd" d="M76.46 25.59L73.74 24.56L75.65 22.79Z"/></g><g class="arc a2"><path class="ln" d="M85.75 54.20A36.0 36.0 0 0 1 82.50 65.49"/><path class="hd" d="M81.39 67.62L81.53 64.71L83.80 65.99Z"/></g><g class="arc a3"><path class="ln" d="M57.05 85.30A36.0 36.0 0 0 1 45.31 85.69"/><path class="hd" d="M42.95 85.30L45.75 84.54L45.24 87.09Z"/></g><g class="arc a4"><path class="ln" d="M18.61 67.62A36.0 36.0 0 0 1 14.61 56.57"/><path class="hd" d="M14.25 54.20L15.84 56.63L13.26 56.93Z"/></g><g class="arc a5 ret"><path class="ln" d="M23.54 25.59A36.0 36.0 0 0 1 32.81 18.37"/><path class="hd" d="M34.96 17.29L33.14 19.56L32.05 17.20Z"/></g></svg>
+      <div class="asn s1" style="left:50.00%;top:14.00%"><i>01</i><b>A/S 접수</b><span>C/S팀 · 2명</span></div>
+      <div class="asn s2" style="left:84.24%;top:38.88%"><i>02</i><b>현장출동 요청</b><span>A/S팀 · 6명</span></div>
+      <div class="asn s3" style="left:71.16%;top:79.12%"><i>03</i><b>현장 조치</b><span>현장 점검·조치</span></div>
+      <div class="asn s4" style="left:28.84%;top:79.12%"><i>04</i><b>원인·조치 보고</b><span>조치 내용 보고</span></div>
+      <div class="asn s5" style="left:15.76%;top:38.88%"><i>05</i><b>A/S 분석</b><span>기술연구소 · 3명</span></div>
+    </div>
+  </div>
+    <ol class="as-legend" id="asLegend">
+      <li><i>01</i><b>A/S 접수</b><span>C/S팀 · 2명</span></li>
+      <li><i>02</i><b>현장출동 요청</b><span>A/S팀 · 6명</span></li>
+      <li><i>03</i><b>현장 조치</b><span>현장 점검·조치</span></li>
+      <li><i>04</i><b>원인·조치 보고</b><span>조치 내용 보고</span></li>
+      <li><i>05</i><b>A/S 분석</b><span>기술연구소 · 3명</span></li>
+    </ol>
+    <div class="mt grid g2 duo stagger" data-fx="lr">
+      <div class="card t-cream"><div class="k">5년 이상 숙련 인력</div><div class="num"><span data-count="22" data-suffix="명">22명</span></div><div class="d">전체 인력 29명 중 약 76%</div></div>
+      <div class="card t-sky"><div class="k">A/S 가능 브랜드·제품</div><div class="num s">7개 브랜드 · 500여 종</div><div class="d">입소 · 프리머스 · LG · 메이텍 · ADC 외</div></div>
+    </div>
+    <p class="partner-h reveal">OFFICIAL PARTNER</p>
+    <div class="logos stagger" data-fx="zoom">
+      <img src="images/partners/alliance.png" alt="Alliance Laundry Systems" loading="lazy">
+      <img src="images/partners/primus.png" alt="primus" loading="lazy">
+      <img src="images/partners/ipso.png" alt="IPSO" loading="lazy">
+      <img src="images/partners/lg.png" alt="LG Commercial Laundry" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="sec bg-cream" id="s15" data-grp="s09">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>04</b>운영지원 및 마케팅</div>
+    <h2 class="h2 reveal">현장의 이야기를,<br><em>공식 채널에서 더 자세히.</em></h2>
+    <div class="mt grid g3 keep3 stagger" data-fx="fan">
+      <a class="ch" href="https://www.youtube.com/@ampmwashq" target="_blank" rel="noopener noreferrer"><small>YOUTUBE</small><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="5.5" width="20" height="13" rx="4"/><path class="f" d="M10 9.4l5.6 2.6-5.6 2.6z"/></svg></span><b>워시큐 유튜브 <i>→</i></b></a>
+      <a class="ch" href="https://www.instagram.com/washq.official/" target="_blank" rel="noopener noreferrer"><small>INSTAGRAM</small><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="f" cx="17.3" cy="6.7" r="1.1"/></svg></span><b>워시큐 인스타그램 <i>→</i></b></a>
+      <a class="ch" href="https://blog.naver.com/washq" target="_blank" rel="noopener noreferrer"><small>BLOG</small><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3.5h10.5L19 7v13.5H5z"/><path d="M15.5 3.5V7H19"/><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4"/></svg></span><b>워시큐 공식 블로그 <i>→</i></b></a>
+    </div>
+    <div class="hp reveal">
+      <a href="https://washq.kr" target="_blank" rel="noopener noreferrer">워시큐 홈페이지 <i>→</i></a>
+      <a href="https://waskor.com" target="_blank" rel="noopener noreferrer">와스코 홈페이지 <i>→</i></a>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="sec" id="s14" data-grp="s14">
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>05</b>FAQ</div>
+    <h2 class="h2 reveal">시작하기 전에,<br><em>궁금한 점을 먼저 확인하세요.</em></h2>
+    <div class="faq reveal" id="faq">
+      <div class="fq open"><button type="button"><span class="q">Q</span>세탁 경험이 없어도 시작할 수 있나요?<span class="chev">⌄</span></button><div class="a"><p>장비 사용교육과 세탁 실습으로 준비합니다.<br>점주는 매장 운영과 세탁·고객응대 업무를 수행합니다.</p></div></div>
+      <div class="fq"><button type="button"><span class="q">Q</span>완전 무인으로 운영하는 매장인가요?<span class="chev">⌄</span></button><div class="a"><p>울맘은 점주가 직접 운영하는 유인 서비스입니다.<br>셀프 이용에 빨래대행·수거배송·정기세탁을 더합니다.</p></div></div>
+      <div class="fq"><button type="button"><span class="q">Q</span>어떤 빨래를 취급하나요?<span class="chev">⌄</span></button><div class="a"><p>물세탁 가능한 생활의류·수건·침구를 중심으로 운영합니다.</p></div></div>
+      <div class="fq"><button type="button"><span class="q">Q</span>B2B 거래처는 누가 확보하나요?<span class="chev">⌄</span></button><div class="a"><p>본사가 영업자료·마케팅·거래처 확보를 지원하고,<br>점주는 지역 상담과 실제 서비스·거래처 관리를 맡습니다.</p></div></div>
+      <div class="fq"><button type="button"><span class="q">Q</span>창업비와 무이자 할부금은 어떻게 구분하나요?<span class="chev">⌄</span></button><div class="a"><p>타입별 금액은 본사 할부를 활용하는 초기 창업비입니다.<br>할부금은 별도 납부하며, 중도해지 시 별도 정산조건이 적용됩니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="sec bg-sky" id="s16" data-grp="s16">
+  <div class="blob b3" data-p="-.2" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow reveal"><b>06</b>울맘 창업 상담</div>
+    <h2 class="h2 reveal">우리 동네의 가능성,<br><em>울맘과 함께 이야기해보세요.</em></h2>
+    <p class="lead reveal">창업 정보를 남겨주시면 담당자가 확인 후 연락드리겠습니다.</p>
+    <form class="form reveal" id="contactForm" novalidate>
+      <div class="f-meter" aria-hidden="true"><i id="fMeter"></i></div>
+      <div class="top"><h3>울맘 창업 상담신청</h3><span class="req-n">* 필수 입력</span></div>
+      <div class="fgrid">
+        <div class="fld" data-req><label for="f_name">이름<em>*</em></label><input id="f_name" name="name" type="text" placeholder="성함을 입력해주세요" required autocomplete="name"></div>
+        <div class="fld" data-req><label for="f_phone">휴대전화<em>*</em></label><input id="f_phone" name="phone" type="tel" placeholder="010-0000-0000" required autocomplete="tel" inputmode="numeric"></div>
+        <div class="fld" data-req><label for="f_region">희망 창업지역<em>*</em></label><input id="f_region" name="region" type="text" placeholder="시·도 / 시·군·구" required></div>
+        <div class="fld"><label for="f_email">이메일 (선택)</label><input id="f_email" name="email" type="email" placeholder="회신 받을 이메일" autocomplete="email"></div>
+        <div class="fld"><label for="f_store">점포 보유 여부 (선택)</label><select id="f_store" name="hasStore"><option value="" selected>미보유 / 임차 / 자가 / 검토 중</option><option>미보유</option><option>임차</option><option>자가</option><option>검토 중</option></select></div>
+        <div class="fld"><label for="f_time">창업 예정 시기 (선택)</label><select id="f_time" name="timing"><option value="" selected>3개월 이내 / 6개월 / 미정</option><option>3개월 이내</option><option>6개월</option><option>미정</option></select></div>
+        <div class="fld"><label for="f_type">관심 타입 (선택)</label><select id="f_type" name="planType"><option value="" selected>A타입 / B타입 / C타입 / 상담 후</option><option>A타입</option><option>B타입</option><option>C타입</option><option>상담 후</option></select></div>
+        <div class="fld"><label for="f_ref">알게 된 경로 (선택)</label><select id="f_ref" name="referrer"><option value="" selected>검색 / 블로그 / 유튜브 / 소개 / 기타</option><option>검색</option><option>블로그</option><option>유튜브</option><option>소개</option><option>기타</option></select></div>
+        <div class="fld full"><label for="f_msg">문의내용 (선택)</label><textarea id="f_msg" name="message" placeholder="궁금한 점을 자유롭게 남겨주세요."></textarea></div>
+      </div>
+      <div class="consent"><input type="checkbox" id="consent"><label for="consent">[필수] 개인정보 수집·이용에 동의합니다.</label><span class="view" id="consentView" role="button" tabindex="0">내용 보기</span></div>
+      <button type="submit" class="submit" id="submitBtn" disabled>울맘 창업 상담 신청하기</button>
+      <div class="msg" id="formMsg"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="ft"><div class="wrap in"><img src="images/logo/washq_care.png" alt="워시Q Care"><b>워시큐<i>|</i>(주)와스코</b></div></footer>
+<button class="top-btn" id="topBtn" aria-label="맨 위로"><svg class="tring" viewBox="0 0 48 48" aria-hidden="true"><circle class="trk" cx="24" cy="24" r="22"/><circle class="tbar" id="topRing" cx="24" cy="24" r="22" pathLength="1"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+/* progress / header / to-top */
+const hdr=$('#siteHeader'), bar=$('#progress'), topBtn=$('#topBtn');
+addEventListener('scroll',()=>{
+  const h=document.documentElement, y=h.scrollTop;
+  bar.style.width=(y/(h.scrollHeight-h.clientHeight)*100)+'%';
+  hdr.classList.toggle('scrolled',y>20); topBtn.classList.toggle('show',y>700);
+},{passive:true});
+topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+/* menu: smooth anchors, hamburger, active highlight */
+const menu=$('#menu'), burger=$('#burger'), menuIn=$('#menuIn');
+const closeMenu=()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','전체 메뉴 열기');};
+burger.addEventListener('click',e=>{e.stopPropagation(); const o=menu.classList.toggle('open'); burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'전체 메뉴 닫기':'전체 메뉴 열기');});
+document.addEventListener('click',e=>{ if(menu.classList.contains('open') && !menu.contains(e.target)) closeMenu(); });
+addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+addEventListener('resize',()=>{ if(innerWidth>900) closeMenu(); });
+$$('a[href^="#s"],a[href="#top"]').forEach(a=>a.addEventListener('click',e=>{
+  const t=$(a.getAttribute('href')); if(!t) return;
+  e.preventDefault(); closeMenu(); setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),menu.classList.contains('open')?0:0);
+}));
+const mlinks=$$('#menuIn a');
+const navIO=new IntersectionObserver(es=>es.forEach(en=>{ if(!en.isIntersecting) return;
+  const id='#'+en.target.dataset.grp; let cur=null;
+  mlinks.forEach(a=>{const on=a.getAttribute('href')===id; a.classList.toggle('active',on); if(on)cur=a;});
+  if(cur && innerWidth>900){ menuIn.scrollTo({left:cur.offsetLeft-(menuIn.clientWidth-cur.offsetWidth)/2,behavior:'smooth'}); }
+}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section[data-grp]').forEach(sec=>navIO.observe(sec));
+
+/* split headings into masked lines */
+$$('h1.split,.h2').forEach(h=>{ if(h.dataset.split) return; h.dataset.split='1';
+  if(!h.querySelector('.ln')){ const parts=h.innerHTML.split(/<br\s*\/?>/i); h.innerHTML=parts.map(t=>'<span class="ln"><span class="in2">'+t.trim()+'</span></span>').join(''); }
+  $$('.ln',h).forEach((l,i)=>l.style.setProperty('--i',i)); h.classList.add('split'); });
+$$('.who svg *').forEach(el=>el.setAttribute('pathLength','1'));
+
+/* reveal */
+const rio=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in');rio.unobserve(en.target); if(en.target.classList.contains('stagger')) setTimeout(()=>en.target.classList.add('settled'),1600);} }),{threshold:.12});
+$$('.reveal,.stagger').forEach(el=>rio.observe(el));
+
+/* counters */
+function count(el){
+  const to=parseFloat(el.dataset.count), dec=parseInt(el.dataset.decimal||'0',10), suf=el.dataset.suffix||'', t0=performance.now(), dur=1400;
+  const fmt=v=>(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;
+  (function tick(n){const p=Math.min((n-t0)/dur,1), e=1-Math.pow(1-p,3); el.textContent=fmt(to*e); if(p<1)requestAnimationFrame(tick);})(t0);
+}
+const cio=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){count(en.target);cio.unobserve(en.target);} }),{threshold:.6});
+$$('[data-count]').forEach(el=>cio.observe(el));
+const payBar=$('#payBar'); if(payBar){ new IntersectionObserver((es,o)=>es.forEach(en=>{if(en.isIntersecting){payBar.style.width='100%';o.disconnect();}}),{threshold:.4}).observe(payBar); }
+
+/* sequential highlight helper */
+function cycle(items,ms,cls='on'){ if(!items.length) return; let i=0; items[0].classList.add(cls);
+  setInterval(()=>{items[i].classList.remove(cls); i=(i+1)%items.length; items[i].classList.add(cls);},ms); }
+cycle($$('#flowHl span'),1100);
+cycle($$('#stepsLine span'),1200);
+(function(){ const nodes=$$('#asRing .asn'), arcs=$$('#asRing .arc'), lis=$$('#asLegend li'); let i=0, paused=false;
+  const set=k=>{ i=k; nodes.forEach((n,x)=>n.classList.toggle('hl',x===k)); arcs.forEach((a,x)=>a.classList.toggle('on',x===k)); lis.forEach((l,x)=>l.classList.toggle('hl',x===k)); };
+  set(0); setInterval(()=>{ if(!paused) set((i+1)%nodes.length); },1700);
+  const hold=el=>{ el.addEventListener('mouseenter',()=>paused=true); el.addEventListener('mouseleave',()=>paused=false); };
+  hold($('#asRing')); hold($('#asLegend'));
+  nodes.forEach((n,x)=>n.addEventListener('mouseenter',()=>set(x))); lis.forEach((l,x)=>l.addEventListener('mouseenter',()=>set(x)));
+})();
+
+/* type select + steps select */
+$$('#typeGrid .type').forEach(c=>{const toggle=()=>{const was=c.classList.contains('sel'); $$('#typeGrid .type').forEach(x=>x.classList.remove('sel')); if(!was)c.classList.add('sel');}; c.onclick=toggle; c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}};});
+$$('#stepGrid .step').forEach(c=>c.onclick=()=>{$$('#stepGrid .step').forEach(x=>x.classList.remove('active')); c.classList.add('active');});
+
+/* equipment photos: collapsed by default */
+const eqGrid=$('#eqGrid'), eqBtn=$('#eqToggle');
+const eqEager=()=>$$('#eqGrid img').forEach(i=>i.loading='eager');
+eqBtn.addEventListener('click',()=>{ const on=eqGrid.classList.toggle('show-img'); eqBtn.setAttribute('aria-expanded',on); $('.lbl',eqBtn).textContent=on?'장비 사진 접기':'장비 사진 보기'; if(on) eqEager(); });
+new IntersectionObserver((es,o)=>es.forEach(en=>{ if(en.isIntersecting){eqEager();o.disconnect();} }),{rootMargin:'900px 0px'}).observe(eqGrid);
+
+/* equipment lightbox */
+const lb=$('#lightbox'), lbCards=$$('#eqGrid .eq'); let lbIdx=0;
+const showLb=(i,dir)=>{ lbIdx=(i+lbCards.length)%lbCards.length; const c=lbCards[lbIdx]; const im=$('#lbImg'); im.src=$('img',c).src; im.alt=c.dataset.n; $('#lbName').textContent=c.dataset.n; $('#lbSpec').textContent=c.dataset.s; lb.classList.add('open');
+  if(dir&&im.animate) im.animate([{opacity:0,transform:'translateX('+(dir*40)+'px)'},{opacity:1,transform:'none'}],{duration:320,easing:'cubic-bezier(.2,.8,.2,1)'}); };
+lbCards.forEach((c,i)=>c.onclick=()=>showLb(i,0));
+$('.lb-nav.prev').onclick=e=>{e.stopPropagation();showLb(lbIdx-1,-1);}; $('.lb-nav.next').onclick=e=>{e.stopPropagation();showLb(lbIdx+1,1);};
+const closeLb=()=>lb.classList.remove('open'); lb.onclick=e=>{if(e.target===lb)closeLb();}; $('#lbClose').onclick=closeLb;
+addEventListener('keydown',e=>{ if(!lb.classList.contains('open')) return; if(e.key==='Escape')closeLb(); if(e.key==='ArrowLeft')showLb(lbIdx-1,-1); if(e.key==='ArrowRight')showLb(lbIdx+1,1); });
+let tx0=null; lb.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{passive:true}); lb.addEventListener('touchend',e=>{ if(tx0===null)return; const dx=e.changedTouches[0].clientX-tx0; if(Math.abs(dx)>50) showLb(lbIdx+(dx<0?1:-1),dx<0?1:-1); tx0=null; });
+
+/* video */
+const vid=$('#video'), toast=$('#toast'); const vclick=()=>{toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400);};
+vid.onclick=vclick; vid.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();vclick();}};
+
+/* faq */
+$$('#faq .fq').forEach(f=>{ const a=$('.a',f); if(f.classList.contains('open')) a.style.maxHeight=a.scrollHeight+'px';
+  $('button',f).onclick=()=>{ const was=f.classList.contains('open'); $$('#faq .fq').forEach(o=>{o.classList.remove('open');$('.a',o).style.maxHeight=null;}); if(!was){f.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';} }; });
+addEventListener('resize',()=>$$('#faq .fq.open .a').forEach(a=>a.style.maxHeight=a.scrollHeight+'px'));
+
+/* form */
+const GOOGLE_SHEET_ENDPOINT='https://script.google.com/macros/s/AKfycbzAz_uFxjmHbz7dtiFJV8xw7fMHvM-1VERr4oaO1IKltOLB009NeHZTNL-L6l5SJeDl/exec';
+const form=$('#contactForm'), consent=$('#consent'), sbtn=$('#submitBtn'), msg=$('#formMsg');
+consent.onchange=()=>sbtn.disabled=!consent.checked;
+const phone=$('#f_phone'); phone.addEventListener('input',()=>{let v=phone.value.replace(/\D/g,'').slice(0,11); if(v.length>7)v=v.replace(/(\d{3})(\d{3,4})(\d{4})/,'$1-$2-$3'); else if(v.length>3)v=v.replace(/(\d{3})(\d+)/,'$1-$2'); phone.value=v;});
+const consentView=()=>alert('[필수] 개인정보 수집·이용 동의\n\n수집 항목: 이름, 휴대전화, 희망 창업지역 등 상담 신청 정보\n수집 목적: 창업 상담 및 안내\n보유 기간: 상담 종료 후 관련 법령에 따른 기간까지');
+$('#consentView').onclick=consentView; $('#consentView').onkeydown=e=>{if(e.key==='Enter')consentView();};
+function show(t,color){msg.textContent=t;msg.style.color=color;msg.classList.add('show');}
+form.addEventListener('submit',e=>{
+  e.preventDefault(); let ok=true;
+  $$('[data-req] input',form).forEach(i=>{const bad=!i.value.trim(); i.closest('.fld').classList.toggle('bad',bad); if(bad)ok=false;});
+  if(!ok){show('필수 항목을 모두 입력해 주세요.','#E4572E');return;}
+  sbtn.disabled=true; sbtn.classList.add('loading'); sbtn.textContent='전송 중...';
+  const done=()=>{show('감사합니다. 담당자가 확인 후 연락드리겠습니다.','var(--blue)'); sbtn.classList.remove('loading'); sbtn.textContent='신청이 접수되었습니다';};
+  if(GOOGLE_SHEET_ENDPOINT.startsWith('http')){
+    fetch(GOOGLE_SHEET_ENDPOINT,{method:'POST',mode:'no-cors',body:new FormData(form)}).then(done).catch(()=>{show('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.','#E4572E');sbtn.classList.remove('loading');sbtn.disabled=false;sbtn.textContent='울맘 창업 상담 신청하기';});
+  } else done();
+});
+/* ================= interaction layer ================= */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* back-to-top progress ring */
+const topRing=$('#topRing');
+const ringUpd=()=>{ const h=document.documentElement; topRing.style.strokeDashoffset=(1-h.scrollTop/(h.scrollHeight-h.clientHeight)).toFixed(4); };
+addEventListener('scroll',ringUpd,{passive:true}); ringUpd();
+
+/* ripple on press */
+$$('.btn,.cta,.eq-toggle').forEach(b=>b.classList.add('rip'));
+document.addEventListener('pointerdown',e=>{ const b=e.target.closest&&e.target.closest('.rip'); if(!b||reduce) return;
+  const r=b.getBoundingClientRect(), d=Math.max(r.width,r.height)*2.2, sp=document.createElement('span'); sp.className='ripple';
+  sp.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px'; b.appendChild(sp); setTimeout(()=>sp.remove(),800); });
+
+/* confetti burst */
+function confetti(origin){ if(reduce) return; const r=origin.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+  const cols=['#097BC2','#5CC4F5','#FD6B2F','#FFD166','#FFFFFF','#132F44'];
+  for(let i=0;i<80;i++){ const p=document.createElement('i'); p.className='cf'; const w=6+Math.random()*7;
+    p.style.cssText='left:'+cx+'px;top:'+cy+'px;width:'+w+'px;height:'+(w*.5)+'px;background:'+cols[i%cols.length]+';box-shadow:0 0 0 1px rgba(19,47,68,.08)';
+    document.body.appendChild(p); const a=Math.random()*Math.PI*2, v=160+Math.random()*340, dx=Math.cos(a)*v, dy=Math.sin(a)*v-180;
+    p.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+dx+'px,'+(dy+520)+'px) rotate('+(Math.random()*1000-500)+'deg)',opacity:0}],{duration:1500+Math.random()*1000,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>p.remove(); } }
+
+/* form: progress meter + field checks */
+(function(){ const meter=$('#fMeter'), n=$('#f_name'), ph=$('#f_phone'), rg=$('#f_region'), cs=$('#consent');
+  const upd=()=>{ const ok=[n.value.trim().length>=2, ph.value.replace(/\D/g,'').length>=10, rg.value.trim().length>=2];
+    [n,ph,rg].forEach((el,i)=>el.closest('.fld').classList.toggle('ok',ok[i]));
+    meter.style.width=((ok.filter(Boolean).length+(cs.checked?1:0))/4*100)+'%'; };
+  ['input','change'].forEach(ev=>form.addEventListener(ev,upd)); upd(); })();
+
+/* video spotlight */
+$('#video').addEventListener('pointermove',e=>{ const r=e.currentTarget.getBoundingClientRect(); e.currentTarget.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%'); e.currentTarget.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%'); });
+
+if(!reduce){
+  /* parallax (images + blobs) */
+  const par=[]; const add=(el,scale)=>par.push({el,scale});
+  $$('.hero-photo').forEach(el=>add(el,1.08)); $$('.svc .ph img,.work .ph img').forEach(el=>add(el,1.14));
+  const blobs=$$('.blob'); let tick=false;
+  const upd=()=>{ tick=false; const vh=innerHeight;
+    par.forEach(({el,scale})=>{ const r=el.parentElement.getBoundingClientRect(); if(r.bottom<-80||r.top>vh+80) return; const t=(r.top+r.height/2-vh/2)/(vh/2+r.height/2); const lim=(scale-1)/2*r.height*.9; el.style.setProperty('--py',(-Math.max(-1,Math.min(1,t))*lim).toFixed(1)+'px'); });
+    blobs.forEach(b=>{ const r=b.parentElement.getBoundingClientRect(); if(r.bottom<-200||r.top>vh+200) return; const t=(r.top+r.height/2-vh/2)/vh; b.style.setProperty('--py',(-t*parseFloat(b.dataset.p||.15)*320).toFixed(1)+'px'); }); };
+  addEventListener('scroll',()=>{ if(!tick){tick=true;requestAnimationFrame(upd);} },{passive:true}); addEventListener('resize',upd); upd();
+
+  /* soap bubbles */
+  (function(){ const box=$('#bubbles'); if(!box) return; const rnd=(a,b)=>a+Math.random()*(b-a);
+    const drops=b=>{ const br=b.getBoundingClientRect(), bx=box.getBoundingClientRect(), cx=br.left-bx.left+br.width/2, cy=br.top-bx.top+br.height/2;
+      for(let i=0;i<7;i++){ const d=document.createElement('i'); d.className='drop'; d.style.left=cx+'px'; d.style.top=cy+'px'; box.appendChild(d);
+        const a=i/7*Math.PI*2+Math.random()*.6, dist=br.width*(.5+Math.random()*.7); d.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:'translate('+Math.cos(a)*dist+'px,'+Math.sin(a)*dist+'px) scale(.2)',opacity:0}],{duration:520,easing:'ease-out'}).onfinish=()=>d.remove(); } };
+    const pop=b=>{ if(b.classList.contains('pop')) return; drops(b); b.classList.add('pop'); setTimeout(()=>{ b.style.setProperty('--x',rnd(2,86)+'%'); b.classList.remove('pop'); },1400); };
+    const N=innerWidth<700?5:9;
+    for(let i=0;i<N;i++){ const b=document.createElement('i'); b.className='bub'; b.style.cssText='--s:'+rnd(28,96).toFixed(0)+'px;--x:'+rnd(2,86).toFixed(0)+'%;--d:'+rnd(9,17).toFixed(1)+'s;--dl:-'+rnd(0,15).toFixed(1)+'s';
+      b.addEventListener('pointerenter',()=>pop(b)); b.addEventListener('click',()=>pop(b)); box.appendChild(b); } })();
+}
+
+if(fine && !reduce){
+  /* 3D tilt + glare */
+  $$('.svc,.who,.work,.type,.eq,.biz>.card,.stat,.ch,.duo>.card,.vs>.card,.benefit>.card').forEach(e=>e.classList.add('tilt'));
+  let cur=null; const clear=()=>{ if(cur){cur.classList.remove('tilting');cur=null;} };
+  document.addEventListener('pointermove',e=>{ const el=e.target.closest&&e.target.closest('.tilt'); if(cur&&cur!==el) clear(); if(!el) return;
+    const r=el.getBoundingClientRect(), px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+    el.style.setProperty('--rx',((.5-py)*9).toFixed(2)+'deg'); el.style.setProperty('--ry',((px-.5)*11).toFixed(2)+'deg'); el.style.setProperty('--mx',(px*100).toFixed(1)+'%'); el.style.setProperty('--my',(py*100).toFixed(1)+'%'); el.classList.add('tilting'); cur=el; },{passive:true});
+  document.addEventListener('mouseleave',clear); addEventListener('blur',clear);
+
+  /* magnetic buttons */
+  const mags=$$('.btn,.cta,.eq-toggle'); mags.forEach(m=>m.classList.add('mag'));
+  document.addEventListener('pointermove',e=>{ mags.forEach(m=>{ const r=m.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+    const cx=r.left+r.width/2, cy=r.top+r.height/2, dx=e.clientX-cx, dy=e.clientY-cy, range=Math.max(r.width,r.height)*.85;
+    if(Math.hypot(dx,dy)<range){ m.classList.add('pulling'); m.style.setProperty('--tx',(dx*.22).toFixed(1)+'px'); m.style.setProperty('--ty',(dy*.3).toFixed(1)+'px'); }
+    else if(m.classList.contains('pulling')){ m.classList.remove('pulling'); m.style.setProperty('--tx','0px'); m.style.setProperty('--ty','0px'); } }); },{passive:true});
+
+  /* custom cursor */
+  const dot=document.createElement('i'), ring=document.createElement('i'); dot.className='cur-dot'; ring.className='cur-ring'; document.body.append(ring,dot);
+  let x=-100,y=-100,rx=-100,ry=-100;
+  addEventListener('pointermove',e=>{ x=e.clientX; y=e.clientY; document.body.classList.add('has-cur'); const t=e.target;
+    ring.classList.toggle('hot',!!(t.closest&&t.closest('a,button,.card,.eq,.type,.step,.video,.bub,[role=button],label,select,summary')));
+    document.body.classList.toggle('cur-text',!!(t.closest&&t.closest('input,textarea'))); },{passive:true});
+  document.addEventListener('mouseleave',()=>document.body.classList.remove('has-cur'));
+  (function loop(){ rx+=(x-rx)*.18; ry+=(y-ry)*.18; dot.style.transform='translate('+x+'px,'+y+'px)'; ring.style.transform='translate('+rx+'px,'+ry+'px)'; requestAnimationFrame(loop); })();
+}
+
+})();
+</script>
+</body>
+</html>
