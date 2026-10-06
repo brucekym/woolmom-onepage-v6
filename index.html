@@ -482,6 +482,13 @@ body.cur-text .cur-dot,body.cur-text .cur-ring{opacity:0;}
 .fq.open .q{animation:qpop .5s cubic-bezier(.2,1.6,.4,1);}
 @keyframes qpop{from{transform:scale(.4) rotate(-30deg);}to{transform:none;}}
 
+@media (max-width:900px){
+  .stagger[data-fx]>*:nth-child(n){transform:translateY(22px);}
+  .stagger.in[data-fx]>*:nth-child(n){transform:none;}
+  .ln>.in2{transform:translateY(115%);}
+  .in .ln>.in2,.reveal.in .ln>.in2{transform:none;}
+}
+@media (hover:none){.card:hover,.stagger.in>*:hover,.stagger.in[data-fx]>*:hover{transform:none;}}
 /* --- responsive --- */
 @media (max-width:900px){
   section[id]{scroll-margin-top:76px;}
