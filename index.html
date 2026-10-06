@@ -174,8 +174,8 @@ html:not(.js) .reveal,html:not(.js) .stagger>*{opacity:1;transform:none;}
 .work{padding:0;background:#fff;border-radius:var(--r);overflow:hidden;}
 .work .ph{position:relative;overflow:hidden;aspect-ratio:850/672;}
 .work .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);translate:0 var(--py,0px);filter:grayscale(.92) contrast(.96);transition:transform .7s,filter .7s;}
-.work:hover .ph img{transform:scale(1.22);filter:none;}
-@media (hover:none){.work .ph img{filter:none;}}
+.work:hover .ph img{transform:scale(1.22);filter:saturate(.72);}
+@media (hover:none){.work .ph img{filter:saturate(.72);}}
 .work .tag{position:absolute;left:0;top:0;width:var(--w,31%);height:14.6%;display:flex;align-items:center;padding-left:4.2%;background:var(--orange);color:#fff;font-size:var(--fs-body);font-weight:700;border-bottom-right-radius:1.4%;}
 .work .tx{padding:clamp(14px,1.6vw,22px) var(--cp) clamp(16px,2vw,28px);}
 .work h3{font-size:var(--fs-h3);font-weight:700;}
