@@ -382,6 +382,22 @@ td.ty{color:var(--blue);font-weight:700;}
 .top-btn .trk{fill:none;stroke:rgba(19,47,68,.12);stroke-width:2;} .top-btn .tbar{fill:none;stroke:var(--blue);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;}
 
 
+/* roles (09) : 본사 / 점주 역할분담 */
+.roles{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(10px,1.6vw,22px);align-items:stretch;}
+.role{border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(19,47,68,.07);}
+.role .rh{display:flex;align-items:center;gap:clamp(12px,1.4vw,18px);padding:clamp(16px,1.8vw,26px) var(--cp);color:#fff;}
+.role.hq .rh{background:var(--blue);} .role.ow .rh{background:var(--navy);}
+.role .rh svg{flex:none;width:clamp(30px,2.8vw,40px);height:clamp(30px,2.8vw,40px);fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.role h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15em .7em;font-size:var(--fs-h3);font-weight:700;letter-spacing:-.01em;}
+.role h3 span{font-size:var(--fs-body);font-weight:300;opacity:.92;}
+.role ul{list-style:none;padding:clamp(8px,1vw,14px) var(--cp) clamp(14px,1.6vw,22px);}
+.role li{display:flex;align-items:flex-start;gap:12px;padding:clamp(10px,1.1vw,14px) 0;border-bottom:1px solid var(--line);font-size:var(--fs-body);font-weight:300;line-height:1.6;}
+.role li:last-child{border-bottom:0;}
+.role li::before{content:'';flex:none;width:20px;height:20px;margin-top:.1em;border-radius:50%;background:#E9F4FA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%23097BC2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat;}
+.role.ow li::before{background-color:#E6EBF0;}
+.role-link{align-self:center;display:flex;align-items:center;justify-content:center;width:clamp(40px,4vw,58px);height:clamp(40px,4vw,58px);border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(19,47,68,.12);}
+.role-link svg{width:55%;height:55%;fill:none;stroke:var(--blue);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+@media (max-width:900px){.roles{grid-template-columns:1fr;}.role-link{margin-inline:auto;}.role-link svg{transform:rotate(90deg);}}
 /* ================= interaction layer ================= */
 /* masked line reveal for headings */
 .ln{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em;}
@@ -755,9 +771,10 @@ body.cur-text .cur-dot,body.cur-text .cur-ring{opacity:0;}
   <div class="wrap">
     <div class="eyebrow reveal"><b>04</b>운영지원 및 마케팅</div>
     <h2 class="h2 reveal">오픈부터 운영까지,<br><em>혼자 준비하지 않도록</em></h2>
-    <div class="mt grid g2 stagger" data-fx="lr">
-      <div class="card sup hq"><h3>본사<span>개점·운영 지원</span></h3><ul class="stagger"><li>상권·입지 검토</li><li>장비 구성·설치</li><li>장비 사용교육·세탁 실습</li><li>기술 A/S·운영점검·재교육</li><li>B2B 영업자료·거래처 확보 지원</li></ul></div>
-      <div class="card sup ow"><h3>점주<span>매장 운영 실행</span></h3><ul class="stagger"><li>매장 청결·고객 응대</li><li>세탁대행·수거배송</li><li>품질·납기·혼입 관리</li><li>지역 사업장 상담</li><li>단골·거래처 관리</li></ul></div>
+    <div class="roles mt reveal">
+      <div class="role hq"><div class="rh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.5L12 3l8 2.5V21"/><path d="M2.5 21h19M8.5 9h2M13.5 9h2M8.5 13h2M13.5 13h2M10.5 21v-4h3v4"/></svg><h3>본사<span>개점·운영 지원</span></h3></div><ul><li>상권·입지 검토</li><li>장비 구성·설치</li><li>장비 사용교육·세탁 실습</li><li>기술 A/S·운영점검·재교육</li><li>B2B 영업자료·거래처 확보 지원</li></ul></div>
+      <div class="role-link" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></svg></div>
+      <div class="role ow"><div class="rh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 9.5L5 4h14l1.5 5.5"/><path d="M3.5 9.5a2.8 2.8 0 0 0 5.5 0 2.8 2.8 0 0 0 6 0 2.8 2.8 0 0 0 5.5 0"/><path d="M5 12.5V21h14v-8.5M10 21v-5h4v5"/></svg><h3>점주<span>매장 운영 실행</span></h3></div><ul><li>매장 청결·고객 응대</li><li>세탁대행·수거배송</li><li>품질·납기·혼입 관리</li><li>지역 사업장 상담</li><li>단골·거래처 관리</li></ul></div>
     </div>
     <div class="bar navy reveal">장비의 사용법부터, 매일의 운영까지.</div>
   </div>
