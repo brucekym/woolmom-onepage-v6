@@ -35,7 +35,8 @@
   --shadow-lg:0 22px 50px rgba(19,47,68,.18);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{-webkit-text-size-adjust:100%;}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;}
+main,.sec,.hero{overflow-x:clip;}
 body{font-family:'KoPubWorld Dotum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:500;font-size:var(--fs-body);color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden;word-break:keep-all;overflow-wrap:anywhere;}
 img,svg{display:block;max-width:100%;}
 a{color:inherit;text-decoration:none;}
@@ -207,7 +208,7 @@ html:not(.js) .reveal,html:not(.js) .stagger>*{opacity:1;transform:none;}
 .rates{margin-top:clamp(12px,1.4vw,20px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,16px);}
 .rate{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#F2F8FD;color:var(--navy);border-radius:12px;padding:clamp(12px,1.3vw,18px) clamp(16px,1.8vw,26px);transition:transform .3s,box-shadow .3s;}
 .rate:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.25);}
-.rate b{display:block;font-size:var(--fs-h4);font-weight:700;} .rate small{display:block;margin-top:2px;font-size:var(--fs-sm);font-weight:300;color:var(--body);}
+.rate b{display:block;font-size:var(--fs-h4);font-weight:700;} .pay .rate small{display:block;margin-top:2px;font-size:var(--fs-sm);font-weight:500;color:#3E4F5D;}
 .rate .pc{padding-left:clamp(14px,1.8vw,26px);border-left:1px solid #CBD7E0;font-size:clamp(24px,1.6vw + 14px,42px);font-weight:700;color:var(--blue);letter-spacing:-.02em;white-space:nowrap;}
 .pay .notes{margin-top:clamp(12px,1.4vw,18px);font-size:var(--fs-sm);font-weight:300;line-height:1.75;color:#B8C8D4;}
 .pay small{display:block;font-size:var(--fs-body);font-weight:300;color:#C4D3DF;}
@@ -487,6 +488,10 @@ body.cur-text .cur-dot,body.cur-text .cur-ring{opacity:0;}
   .pay-top{grid-template-columns:1fr;} .pay .r{text-align:left;}
 }
 @media (max-width:640px){
+  .stagger[data-fx="lr"]>*:nth-child(odd){transform:translateX(-24px);}
+  .stagger[data-fx="lr"]>*:nth-child(even){transform:translateX(24px);}
+  .stagger[data-fx="fan"]>*:nth-child(3n+1){transform:translateX(-20px) rotate(-2deg);}
+  .stagger[data-fx="fan"]>*:nth-child(3n){transform:translateX(20px) rotate(2deg);}
   .rates{grid-template-columns:1fr;}
   .asn b,.asn span{display:none;}
   .asn i{font-size:clamp(15px,4.4vw,19px);letter-spacing:0;}
