@@ -196,7 +196,20 @@ html:not(.js) .reveal,html:not(.js) .stagger>*{opacity:1;transform:none;}
 .type.sel{border-color:var(--blue);box-shadow:var(--shadow-lg);}
 .type .chk{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;transform:scale(0);transition:transform .3s;}
 .type.sel .chk{transform:scale(1);}
-.pay{margin-top:var(--mt-s);background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.pay{margin-top:var(--mt-s);background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,44px);}
+.pay-top{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.pay .sep{height:1px;background:rgba(255,255,255,.18);margin:clamp(20px,2.6vw,36px) 0;}
+.pay .q{font-size:var(--fs-lead);font-weight:300;color:#C4D3DF;}
+.pay .t2{margin-top:8px;font-size:clamp(21px,1.3vw + 14px,34px);font-weight:700;letter-spacing:-.02em;}
+.pay .save{margin-top:10px;font-size:clamp(34px,4.6vw + 6px,84px);font-weight:700;color:#BFE6FB;line-height:1.1;letter-spacing:-.03em;}
+.pay .base{margin-top:10px;font-size:var(--fs-body);font-weight:300;color:#C4D3DF;}
+.pay .t3{font-size:var(--fs-h3);font-weight:700;letter-spacing:-.01em;}
+.rates{margin-top:clamp(12px,1.4vw,20px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,16px);}
+.rate{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#F2F8FD;color:var(--navy);border-radius:12px;padding:clamp(12px,1.3vw,18px) clamp(16px,1.8vw,26px);transition:transform .3s,box-shadow .3s;}
+.rate:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.25);}
+.rate b{display:block;font-size:var(--fs-h4);font-weight:700;} .rate small{display:block;margin-top:2px;font-size:var(--fs-sm);font-weight:300;color:var(--body);}
+.rate .pc{padding-left:clamp(14px,1.8vw,26px);border-left:1px solid #CBD7E0;font-size:clamp(24px,1.6vw + 14px,42px);font-weight:700;color:var(--blue);letter-spacing:-.02em;white-space:nowrap;}
+.pay .notes{margin-top:clamp(12px,1.4vw,18px);font-size:var(--fs-sm);font-weight:300;line-height:1.75;color:#B8C8D4;}
 .pay small{display:block;font-size:var(--fs-body);font-weight:300;color:#C4D3DF;}
 .pay .big{margin-top:10px;font-size:clamp(32px,3vw + 12px,60px);font-weight:700;line-height:1.15;letter-spacing:-.03em;white-space:nowrap;}
 .pay .r{text-align:right;} .pay .r .big{font-size:clamp(26px,2.4vw + 10px,48px);}
@@ -471,9 +484,10 @@ body.cur-text .cur-dot,body.cur-text .cur-ring{opacity:0;}
   .g3.keep3{grid-template-columns:1fr;}
   .eqgrid{grid-template-columns:1fr 1fr;}
   .logos{grid-template-columns:1fr 1fr;row-gap:24px;}
-  .pay{grid-template-columns:1fr;} .pay .r{text-align:left;}
+  .pay-top{grid-template-columns:1fr;} .pay .r{text-align:left;}
 }
 @media (max-width:640px){
+  .rates{grid-template-columns:1fr;}
   .asn b,.asn span{display:none;}
   .asn i{font-size:clamp(15px,4.4vw,19px);letter-spacing:0;}
   .as-legend{display:block;}
@@ -660,8 +674,24 @@ body.cur-text .cur-dot,body.cur-text .cur-ring{opacity:0;}
       <div class="card type t-cream" tabindex="0"><span class="chk">✓</span><div class="tn">C TYPE</div><div class="tp">6천만원대</div><div class="td">넉넉한 처리용량</div></div>
     </div>
     <div class="pay reveal">
-      <div class="l"><small>본사 직접 할부</small><div class="big"><span data-count="5000" data-suffix="만원">5,000만원</span></div><div class="bot">장비대금 분할 납부</div><div class="prog"><i id="payBar"></i></div></div>
-      <div class="r"><small>&nbsp;</small><div class="big"><span data-count="60" data-suffix="개월">60개월</span> 무이자</div><div class="bot">월 약 <span data-count="83.3" data-decimal="1" data-suffix="만원">83.3만원</span> · 정상 납부 기준</div></div>
+      <div class="pay-top">
+        <div class="l"><small>본사 직접 할부</small><div class="big"><span data-count="5000" data-suffix="만원">5,000만원</span></div><div class="bot">장비대금 분할 납부</div></div>
+        <div class="r"><small>&nbsp;</small><div class="big"><span data-count="60" data-suffix="개월">60개월</span> 무이자</div><div class="bot">월 약 <span data-count="83.3" data-decimal="1" data-suffix="만원">83.3만원</span> · 정상 납부 기준</div></div>
+      </div>
+      <div class="sep"></div>
+      <div class="q">타 업종 금융을 이용했다면?</div>
+      <div class="t2">60개월 동안 절감되는 금융비용</div>
+      <div class="save">약 <span data-count="2137" data-suffix="">2,137</span>~<span data-count="2687" data-suffix="만원">2,687만원</span></div>
+      <div class="base">5,000만원 · 60개월 이용 기준</div>
+      <div class="sep"></div>
+      <div class="t3">타 업종에서 확인되는 실질연이율</div>
+      <div class="rates">
+        <div class="rate"><div><b>치킨</b><small>P사 창업장비 할부</small></div><span class="pc"><span data-count="18.39" data-decimal="2" data-suffix="%">18.39%</span></span></div>
+        <div class="rate"><div><b>커피</b><small>D사 커피머신 할부</small></div><span class="pc"><span data-count="20.06" data-decimal="2" data-suffix="%">20.06%</span></span></div>
+        <div class="rate"><div><b>외식</b><small>M사 외식 창업금융</small></div><span class="pc"><span data-count="19.56" data-decimal="2" data-suffix="%">19.56%</span></span></div>
+        <div class="rate"><div><b>창업자금</b><small>H·W사 신용대출</small></div><span class="pc"><span data-count="16.08" data-decimal="2" data-suffix="%">16.08%</span></span></div>
+      </div>
+      <p class="notes">※ 5,000만원, 60개월, 원리금균등상환 기준. 실질연이율 16.08~20.06% 적용 시 예상 금융비용이며, 수수료 및 중도상환 조건은 제외했습니다.<br>※ 실제 금리는 신용도·계약조건·시점에 따라 달라질 수 있습니다.<br>&nbsp;&nbsp;&nbsp;(명목이자는 원금 기준의 표시금리이며, 실질연이율은 상환방식·기간을 반영한 실제 부담금리입니다.)</p>
     </div>
     <p class="fine reveal">타입별 금액은 본사 할부를 활용하는 초기 창업비 구간이며, 할부금은 별도 납부합니다.<br>임차보증금은 별도입니다. 인테리어·설비공사 포함 범위, 부가세와 현장별 추가비용은<br>개별 견적으로 확인합니다. 중도해지 시 잔여대금에 별도 정산조건이 적용됩니다.</p>
   </div>
