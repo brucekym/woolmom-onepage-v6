@@ -459,13 +459,6 @@ html:not(.js) .ln>.in2{transform:none;}
 .drop{position:absolute;width:7px;height:7px;border-radius:50%;background:rgba(9,123,194,.5);pointer-events:none;}
 @media (max-width:900px){.bubbles{left:0;opacity:.6;z-index:0;}}
 @media (hover:none){.bubbles{pointer-events:none;}}
-/* custom cursor */
-.cur-dot,.cur-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:99999;border-radius:50%;opacity:0;transition:opacity .3s,width .3s,height .3s,margin .3s,background .3s,border-color .3s;}
-.cur-dot{width:7px;height:7px;margin:-3.5px 0 0 -3.5px;background:var(--blue);}
-.cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid rgba(9,123,194,.55);}
-.cur-ring.hot{width:68px;height:68px;margin:-34px 0 0 -34px;background:rgba(9,123,194,.1);border-color:var(--blue);}
-body.has-cur .cur-dot,body.has-cur .cur-ring{opacity:1;}
-body.cur-text .cur-dot,body.cur-text .cur-ring{opacity:0;}
 /* lightbox nav */
 .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:34px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s;z-index:2;}
 .lb-nav:hover{background:var(--blue);transform:translateY(-50%) scale(1.1);}
@@ -1102,14 +1095,6 @@ if(fine && !reduce){
     if(Math.hypot(dx,dy)<range){ m.classList.add('pulling'); m.style.setProperty('--tx',(dx*.22).toFixed(1)+'px'); m.style.setProperty('--ty',(dy*.3).toFixed(1)+'px'); }
     else if(m.classList.contains('pulling')){ m.classList.remove('pulling'); m.style.setProperty('--tx','0px'); m.style.setProperty('--ty','0px'); } }); },{passive:true});
 
-  /* custom cursor */
-  const dot=document.createElement('i'), ring=document.createElement('i'); dot.className='cur-dot'; ring.className='cur-ring'; document.body.append(ring,dot);
-  let x=-100,y=-100,rx=-100,ry=-100;
-  addEventListener('pointermove',e=>{ x=e.clientX; y=e.clientY; document.body.classList.add('has-cur'); const t=e.target;
-    ring.classList.toggle('hot',!!(t.closest&&t.closest('a,button,.card,.eq,.type,.step,.video,.bub,[role=button],label,select,summary')));
-    document.body.classList.toggle('cur-text',!!(t.closest&&t.closest('input,textarea'))); },{passive:true});
-  document.addEventListener('mouseleave',()=>document.body.classList.remove('has-cur'));
-  (function loop(){ rx+=(x-rx)*.18; ry+=(y-ry)*.18; dot.style.transform='translate('+x+'px,'+y+'px)'; ring.style.transform='translate('+rx+'px,'+ry+'px)'; requestAnimationFrame(loop); })();
 }
 
 })();
