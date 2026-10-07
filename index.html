@@ -1080,14 +1080,6 @@ if(!reduce){
 }
 
 if(fine && !reduce){
-  /* 3D tilt + glare */
-  $$('.svc,.who,.work,.type,.eq,.biz>.card,.stat,.ch,.duo>.card,.vs>.card,.benefit>.card').forEach(e=>e.classList.add('tilt'));
-  let cur=null; const clear=()=>{ if(cur){cur.classList.remove('tilting');cur=null;} };
-  document.addEventListener('pointermove',e=>{ const el=e.target.closest&&e.target.closest('.tilt'); if(cur&&cur!==el) clear(); if(!el) return;
-    const r=el.getBoundingClientRect(), px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
-    el.style.setProperty('--rx',((.5-py)*9).toFixed(2)+'deg'); el.style.setProperty('--ry',((px-.5)*11).toFixed(2)+'deg'); el.style.setProperty('--mx',(px*100).toFixed(1)+'%'); el.style.setProperty('--my',(py*100).toFixed(1)+'%'); el.classList.add('tilting'); cur=el; },{passive:true});
-  document.addEventListener('mouseleave',clear); addEventListener('blur',clear);
-
   /* magnetic buttons */
   const mags=[]; /* magnetic pull removed */
   document.addEventListener('pointermove',e=>{ mags.forEach(m=>{ const r=m.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
