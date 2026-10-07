@@ -1035,7 +1035,7 @@ const ringUpd=()=>{ const h=document.documentElement; topRing.style.strokeDashof
 addEventListener('scroll',ringUpd,{passive:true}); ringUpd();
 
 /* ripple on press */
-$$('.btn,.cta,.eq-toggle').forEach(b=>b.classList.add('rip'));
+
 document.addEventListener('pointerdown',e=>{ const b=e.target.closest&&e.target.closest('.rip'); if(!b||reduce) return;
   const r=b.getBoundingClientRect(), d=Math.max(r.width,r.height)*2.2, sp=document.createElement('span'); sp.className='ripple';
   sp.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px'; b.appendChild(sp); setTimeout(()=>sp.remove(),800); });
@@ -1089,7 +1089,7 @@ if(fine && !reduce){
   document.addEventListener('mouseleave',clear); addEventListener('blur',clear);
 
   /* magnetic buttons */
-  const mags=$$('.btn,.cta,.eq-toggle'); mags.forEach(m=>m.classList.add('mag'));
+  const mags=[]; /* magnetic pull removed */
   document.addEventListener('pointermove',e=>{ mags.forEach(m=>{ const r=m.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
     const cx=r.left+r.width/2, cy=r.top+r.height/2, dx=e.clientX-cx, dy=e.clientY-cy, range=Math.max(r.width,r.height)*.85;
     if(Math.hypot(dx,dy)<range){ m.classList.add('pulling'); m.style.setProperty('--tx',(dx*.22).toFixed(1)+'px'); m.style.setProperty('--ty',(dy*.3).toFixed(1)+'px'); }
