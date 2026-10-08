@@ -992,8 +992,6 @@ let tx0=null; lb.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{p
 const vid=$('#video'); const vplay=mute=>{ if(vid.classList.contains('playing')) return; vid.classList.add('playing'); ['role','tabindex','aria-label'].forEach(a=>vid.removeAttribute(a));
   vid.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+vid.dataset.yt+'?autoplay=1&rel=0&playsinline=1'+(mute?'&mute=1':'')+'" title="울맘 소개영상" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; };
 vid.onclick=()=>vplay(); vid.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();vplay();}};
-/* 화면에 60% 이상 보이면 소리 끈 상태로 자동재생(브라우저 정책상 소리 있는 자동재생은 막힘) */
-if(!reduce) new IntersectionObserver((es,o)=>es.forEach(en=>{ if(en.isIntersecting){o.disconnect();vplay(true);} }),{threshold:.6}).observe(vid);
 
 /* faq */
 $$('#faq .fq').forEach(f=>{ const a=$('.a',f), b=$('button',f); if(f.classList.contains('open')) a.style.maxHeight=a.scrollHeight+'px'; b.setAttribute('aria-expanded',f.classList.contains('open'));
