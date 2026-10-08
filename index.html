@@ -990,7 +990,8 @@ let tx0=null; lb.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{p
 
 /* video */
 const vid=$('#video'); const vplay=mute=>{ if(vid.classList.contains('playing')) return; vid.classList.add('playing'); ['role','tabindex','aria-label'].forEach(a=>vid.removeAttribute(a));
-  vid.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+vid.dataset.yt+'?autoplay=1&rel=0&playsinline=1'+(mute?'&mute=1':'')+'" title="울맘 소개영상" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; };
+  vid.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+vid.dataset.yt+'?autoplay=1&rel=0&playsinline=1&enablejsapi=1'+(mute?'&mute=1':'')+'" title="울맘 소개영상" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  const fr=$('iframe',vid); fr.addEventListener('load',()=>{ const cmd=()=>fr.contentWindow.postMessage(JSON.stringify({event:'command',func:'playVideo',args:[]}),'*'); cmd(); setTimeout(cmd,600); }); };
 vid.onclick=()=>vplay(); vid.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();vplay();}};
 
 /* faq */
