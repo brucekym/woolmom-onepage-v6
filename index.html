@@ -245,6 +245,9 @@ tbody tr:hover td{background:#DCEEF8;}
 td.ty{color:var(--blue);font-weight:700;}
 .common{margin-top:var(--mt-s);font-size:var(--fs-body);font-weight:300;line-height:1.85;color:var(--body);}
 .common b{color:var(--text);font-weight:700;}
+.type-note{margin-top:10px;text-align:right;font-size:var(--fs-sm);font-weight:500;color:var(--mute);}
+.pay .cond{margin-top:6px;font-size:var(--fs-sm);font-weight:300;color:#9FB4C4;}
+.eq-note{margin-top:8px;font-size:var(--fs-sm);font-weight:500;color:var(--mute);}
 .lightbox{position:fixed;inset:0;background:rgba(19,47,68,.75);z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .3s,visibility 0s .3s;}
 .lightbox.open{opacity:1;pointer-events:auto;visibility:visible;transition:opacity .3s;}
 .lb-card{background:#fff;border-radius:20px;width:min(440px,100%);padding:32px;text-align:center;transform:scale(.93);transition:transform .3s;}
@@ -680,10 +683,11 @@ html:not(.js) .ln>.in2{transform:none;}
       <div class="card type t-sky" tabindex="0"><span class="chk">✓</span><div class="tn">B TYPE</div><div class="tp">5천만원대</div><div class="td">생활빨래 + 정기물량</div></div>
       <div class="card type t-cream" tabindex="0"><span class="chk">✓</span><div class="tn">C TYPE</div><div class="tp">6천만원대</div><div class="td">넉넉한 처리용량</div></div>
     </div>
+    <p class="type-note reveal">창업비는 장비 구성에 따라 달라질 수 있습니다.</p>
     <div class="pay reveal">
       <div class="pay-top">
         <div class="l"><small>본사 직접 할부</small><div class="big"><span data-count="5000" data-suffix="만원">5,000만원</span></div><div class="bot">장비대금 분할 납부</div></div>
-        <div class="r"><small>&nbsp;</small><div class="big"><span data-count="60" data-suffix="개월">60개월</span> 무이자</div><div class="bot">월 약 <span data-count="83.3" data-decimal="1" data-suffix="만원">83.3만원</span> · 정상 납부 기준</div></div>
+        <div class="r"><small>&nbsp;</small><div class="big"><span data-count="60" data-suffix="개월">60개월</span> 무이자</div><div class="bot">월 약 <span data-count="83.3" data-decimal="1" data-suffix="만원">83.3만원</span> · 정상 납부 기준</div><div class="cond">장비 대금에 한하여 할부 및 무이자 지원 조건입니다.</div></div>
       </div>
       <div class="sep"></div>
       <div class="q">타 업종 금융을 이용했다면?</div>
@@ -730,7 +734,8 @@ html:not(.js) .ln>.in2{transform:none;}
         <tr><td class="ty">C TYPE</td><td>20kg 1대 · 27kg 2대 · 31kg 1대</td><td>20kg 2단 1대 · 24kg 1대 · 34kg 1대</td></tr>
       </tbody>
     </table></div>
-    <p class="common reveal"><b>전 타입 공통 구성</b><br>LG 타이탄 세탁기 17kg 2대 + 건조기 13.6kg 2대<br>멀티키오스크 · 세제공급장치</p>
+    <p class="common reveal"><b>전 타입 공통 구성</b><br>LG 타이탄 세탁기 17kg 2대 + 건조기 13.6kg 2대<br>멀티키오스크 · 운동화 세탁건조기</p>
+    <p class="eq-note reveal">※ 장비 구성은 점포 및 기타 환경에 따라 달라질 수 있습니다.</p>
   </div>
 </section>
 <div class="lightbox" id="lightbox"><button type="button" class="lb-nav prev" aria-label="이전 장비">‹</button><button type="button" class="lb-nav next" aria-label="다음 장비">›</button><div class="lb-card"><img id="lbImg" alt=""><h4 id="lbName"></h4><p id="lbSpec"></p><button type="button" id="lbClose">닫기</button></div></div>
