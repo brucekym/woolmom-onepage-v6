@@ -374,10 +374,10 @@ td.ty{color:var(--blue);font-weight:700;}
 .ft img{height:clamp(32px,3.4vw,46px);width:auto;}
 .ft b{font-size:var(--fs-body);font-weight:700;} .ft b i{font-style:normal;margin:0 .6em;font-weight:300;color:var(--mute);}
 .top-btn{position:fixed;right:20px;bottom:20px;width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s,background .3s;z-index:900;}
-.fcta{position:fixed;left:24px;bottom:24px;z-index:900;display:flex;align-items:center;gap:12px;padding:10px 24px 10px 10px;border-radius:999px;background:var(--orange);color:#fff;box-shadow:0 14px 34px rgba(253,107,47,.42),0 2px 6px rgba(19,47,68,.18);border:2px solid rgba(255,255,255,.85);transition:transform .25s,box-shadow .25s,opacity .3s,background .25s;}
-.fcta:hover{background:#EE5A1C;transform:translateY(-3px);box-shadow:0 18px 40px rgba(253,107,47,.5),0 2px 6px rgba(19,47,68,.18);}
+.fcta{position:fixed;left:24px;bottom:24px;z-index:900;display:flex;align-items:center;gap:12px;padding:10px 24px 10px 10px;border-radius:999px;background:var(--blue);color:#fff;box-shadow:0 14px 34px rgba(9,123,194,.40),0 2px 6px rgba(19,47,68,.18);border:2px solid rgba(255,255,255,.85);transition:transform .25s,box-shadow .25s,opacity .3s,background .25s;}
+.fcta:hover{background:var(--blue-d);transform:translateY(-3px);box-shadow:0 18px 40px rgba(9,123,194,.48),0 2px 6px rgba(19,47,68,.18);}
 .fcta .fc-ic{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;}
-.fcta .fc-ic svg{width:24px;height:24px;fill:none;stroke:var(--orange);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.fcta .fc-ic svg{width:24px;height:24px;fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .fcta .fc-tx{display:flex;flex-direction:column;line-height:1.2;font-size:var(--fs-h4);font-weight:700;white-space:nowrap;}
 .fcta .fc-tx small{font-size:12px;font-weight:500;opacity:.9;letter-spacing:.04em;}
 .fcta.hide{opacity:0;pointer-events:none;transform:translateY(20px);}
@@ -905,7 +905,7 @@ html:not(.js) .ln>.in2{transform:none;}
 </main>
 
 <footer class="ft"><div class="wrap in"><img src="images/logo/washq_care.png" alt="워시Q Care"><b>워시큐<i>|</i>(주)와스코</b></div></footer>
-<a class="fcta" id="fcta" href="#s16" aria-label="울맘 창업 상담 신청으로 이동"><span class="fc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-4.5 3.5V17H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M8 10h8M8 13h5"/></svg></span><span class="fc-tx"><small>창업 문의</small>울맘 창업 상담</span></a>
+<a class="fcta" id="fcta" href="#s16" aria-label="울맘 창업 상담 신청으로 이동"><span class="fc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-4.5 3.5V17H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M8 10h8M8 13h5"/></svg></span><span class="fc-tx">울맘 창업 상담</span></a>
 <button class="top-btn" id="topBtn" aria-label="맨 위로"><svg class="tring" viewBox="0 0 48 48" aria-hidden="true"><circle class="trk" cx="24" cy="24" r="22"/><circle class="tbar" id="topRing" cx="24" cy="24" r="22" pathLength="1"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script>
