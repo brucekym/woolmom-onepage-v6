@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Google tag (gtag.js) : 구글 광고 전환 추적 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16489518806"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16489518806');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>워시Q Care 울맘 - 창업, 생활빨래에서 답을 찾다</title>
@@ -890,10 +898,12 @@ html:not(.js) .ln>.in2{transform:none;}
         <div class="fld" data-req><label for="f_phone">휴대전화<em>*</em></label><input id="f_phone" name="phone" type="tel" placeholder="010-0000-0000" required autocomplete="tel" inputmode="numeric"></div>
         <div class="fld" data-req><label for="f_region">희망 창업지역<em>*</em></label><input id="f_region" name="region" type="text" placeholder="시·도 / 시·군·구" required></div>
         <div class="fld"><label for="f_email">이메일 (선택)</label><input id="f_email" name="email" type="email" placeholder="회신 받을 이메일" autocomplete="email"></div>
-        <div class="fld"><label for="f_store">점포 보유 여부 (선택)</label><select id="f_store" name="hasStore"><option value="" selected>선택해 주세요</option><option>미보유</option><option>임차</option><option>자가</option><option>검토 중</option><option>기존 매장 인수도 가능</option></select></div>
-        <div class="fld"><label for="f_time">창업 예정 시기 (선택)</label><select id="f_time" name="timing"><option value="" selected>선택해 주세요</option><option>3개월 이내</option><option>6개월</option><option>미정</option></select></div>
+        <div class="fld" data-req><label for="f_store">점포 보유 여부<em>*</em></label><select id="f_store" name="hasStore" required><option value="" selected>선택해 주세요</option><option>미보유</option><option>임차</option><option>자가</option><option>검토 중</option><option>기존 매장 인수도 가능</option></select></div>
+        <div class="fld" data-req><label for="f_time">창업 예정 시기<em>*</em></label><select id="f_time" name="timing" required><option value="" selected>선택해 주세요</option><option>3개월 이내</option><option>6개월</option><option>미정</option></select></div>
+        <div class="fld" data-req><label for="f_budget">준비 가능 자금<em>*</em></label><select id="f_budget" name="budget" required><option value="" selected>선택해 주세요</option><option>3천만 원 미만</option><option>3천만~4천만 원</option><option>4천만~5천만 원</option><option>5천만 원 이상</option><option>상담 후 결정</option></select></div>
         <div class="fld"><label for="f_type">관심 타입 (선택)</label><select id="f_type" name="planType"><option value="" selected>선택해 주세요</option><option>A타입</option><option>B타입</option><option>C타입</option><option>상담 후</option></select></div>
         <div class="fld"><label for="f_ref">알게 된 경로 (선택)</label><select id="f_ref" name="referrer"><option value="" selected>선택해 주세요</option><option>검색</option><option>블로그</option><option>유튜브</option><option>소개</option><option>기타</option></select></div>
+        <input type="hidden" name="source" id="f_source"><div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label for="f_website">웹사이트</label><input type="text" id="f_website" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="fld full"><label for="f_msg">문의내용 (선택)</label><textarea id="f_msg" name="message" placeholder="궁금한 점을 자유롭게 남겨주세요."></textarea></div>
       </div>
       <div class="consent"><input type="checkbox" id="consent"><label for="consent">[필수] 개인정보 수집·이용에 동의합니다.</label><span class="view" id="consentView" role="button" tabindex="0">내용 보기</span></div>
@@ -1011,6 +1021,13 @@ $$('#faq .fq').forEach(f=>{ const a=$('.a',f), b=$('button',f); if(f.classList.c
 addEventListener('resize',()=>$$('#faq .fq.open .a').forEach(a=>a.style.maxHeight=a.scrollHeight+'px'));
 
 /* form */
+/* 유입 경로 자동 기록: 구글 광고(gclid)·네이버 광고(NaPm)·utm 값을 신청서에 함께 저장 */
+(function(){try{var q=new URLSearchParams(location.search),v=[];
+ if(q.get('gclid')||q.get('gbraid')||q.get('wbraid'))v.push('구글광고');
+ if(q.get('NaPm')||q.get('napm'))v.push('네이버광고');
+ ['utm_source','utm_medium','utm_campaign'].forEach(function(k){if(q.get(k))v.push(k.replace('utm_','')+'='+q.get(k));});
+ var r=document.referrer?new URL(document.referrer).hostname:''; if(r&&r!==location.hostname)v.push('ref='+r);
+ var el=document.getElementById('f_source'); if(el)el.value=v.join(' | ')||'직접방문';}catch(e){}})();
 const GOOGLE_SHEET_ENDPOINT='https://script.google.com/macros/s/AKfycbzAz_uFxjmHbz7dtiFJV8xw7fMHvM-1VERr4oaO1IKltOLB009NeHZTNL-L6l5SJeDl/exec';
 const form=$('#contactForm'), consent=$('#consent'), sbtn=$('#submitBtn'), msg=$('#formMsg');
 consent.onchange=()=>sbtn.disabled=!consent.checked;
@@ -1018,14 +1035,15 @@ const phone=$('#f_phone'); phone.addEventListener('input',()=>{let v=phone.value
 const consentView=()=>alert('[필수] 개인정보 수집·이용 동의\n\n수집 항목: 이름, 휴대전화, 희망 창업지역 등 상담 신청 정보\n수집 목적: 창업 상담 및 안내\n보유 기간: 상담 종료 후 관련 법령에 따른 기간까지');
 $('#consentView').onclick=consentView; $('#consentView').onkeydown=e=>{if(e.key==='Enter')consentView();};
 function show(t,color){msg.textContent=t;msg.style.color=color;msg.classList.add('show');}
-const fieldOk={f_name:v=>v.trim().length>=2, f_phone:v=>v.replace(/\D/g,'').length>=10, f_region:v=>v.trim().length>=2, f_email:v=>!v.trim()||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())};
+const fieldOk={f_name:v=>v.trim().length>=2, f_phone:v=>v.replace(/\D/g,'').length>=10, f_region:v=>v.trim().length>=2, f_store:v=>v!=='', f_time:v=>v!=='', f_budget:v=>v!=='', f_email:v=>!v.trim()||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())};
 form.addEventListener('input',e=>{ const f=e.target.closest('.fld'); if(f&&f.classList.contains('bad')&&fieldOk[e.target.id]&&fieldOk[e.target.id](e.target.value)) f.classList.remove('bad'); });
 form.addEventListener('submit',e=>{
   e.preventDefault(); let firstBad=null;
   Object.keys(fieldOk).forEach(id=>{const el=$('#'+id), bad=!fieldOk[id](el.value); el.closest('.fld').classList.toggle('bad',bad); if(bad&&!firstBad)firstBad=el;});
   if(firstBad){show(firstBad.id==='f_email'?'이메일 주소 형식을 확인해 주세요.':'필수 항목을 정확히 입력해 주세요.','#E4572E'); firstBad.focus(); return;}
   sbtn.disabled=true; sbtn.classList.add('loading'); sbtn.textContent='전송 중...';
-  const done=()=>{show('감사합니다. 담당자가 확인 후 연락드리겠습니다.','var(--blue)'); sbtn.classList.remove('loading'); sbtn.textContent='신청이 접수되었습니다';};
+  const done=()=>{ try{ if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-16489518806/_8aBCLWr1rodENat6LY9'}); }catch(_){} show('감사합니다. 담당자가 확인 후 연락드리겠습니다.','var(--blue)'); sbtn.classList.remove('loading'); sbtn.textContent='신청이 접수되었습니다';};
+  if($('#f_website').value){ done(); return; } /* 자동 입력 프로그램(스팸)은 저장하지 않음 */
   if(GOOGLE_SHEET_ENDPOINT.startsWith('http')){
     fetch(GOOGLE_SHEET_ENDPOINT,{method:'POST',mode:'no-cors',body:new FormData(form)}).then(done).catch(()=>{show('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.','#E4572E');sbtn.classList.remove('loading');sbtn.disabled=false;sbtn.textContent='울맘 창업 상담 신청하기';});
   } else done();
